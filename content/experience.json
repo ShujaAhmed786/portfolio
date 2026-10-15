@@ -1,0 +1,6 @@
+{
+  "role": "DevOps Engineer",
+  "company": "Independent Freelance Practice",
+  "period": "2024 — Present",
+  "description": "Designing high-reliability Kubernetes architectures (EKS, K3s), engineering 14-stage automated Jenkins CI/CD pipelines with SonarQube & Trivy gates, and deploying Istio zero-trust service meshes."
+}

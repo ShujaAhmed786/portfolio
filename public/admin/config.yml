@@ -1,0 +1,119 @@
+# ==============================================================================
+# Decap CMS (formerly Netlify CMS) Configuration
+# Documentation: https://decapcms.org/docs/configuration-options/
+# ==============================================================================
+
+# BACKEND CONFIGURATION
+# Using the GitHub backend directly (ideal for Vercel deployment without Netlify Git Gateway).
+#
+# ------------------------------------------------------------------------------
+# TODO FOR SHUJA:
+# To enable GitHub OAuth login for Decap CMS when deployed on Vercel:
+# 1. Register a GitHub OAuth App at: https://github.com/settings/developers
+#    - Application name: Shuja Ahmed Portfolio CMS
+#    - Homepage URL: https://shujaahmed.dev (or your Vercel deployment URL)
+#    - Authorization callback URL: https://<your-oauth-proxy>.vercel.app/callback
+# 2. Set up a free lightweight GitHub OAuth proxy (e.g. decap-server or a Vercel
+#    serverless OAuth function) to exchange authorization codes for access tokens.
+# 3. Update the repo field below if your GitHub username or repo name differs.
+# 4. Uncomment and configure 'base_url' and 'auth_endpoint' with your proxy URL.
+# ------------------------------------------------------------------------------
+backend:
+  name: github
+  repo: ShujaAhmed786/portfolio
+  branch: main
+  # Optional OAuth proxy endpoint (uncomment once OAuth proxy is deployed):
+  # base_url: https://your-oauth-proxy.vercel.app
+  # auth_endpoint: api/auth
+
+# MEDIA & STATIC ASSETS
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+# PUBLISHING WORKFLOW
+publish_mode: simple
+site_url: "https://shujaahmed.dev"
+display_url: "https://shujaahmed.dev"
+
+# CONTENT COLLECTIONS
+collections:
+  # ----------------------------------------------------------------------------
+  # 1. Blog Posts Collection
+  # ----------------------------------------------------------------------------
+  - name: "blog"
+    label: "Blog Posts"
+    label_singular: "Blog Post"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    extension: "md"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", hint: "URL slug, e.g. how-i-run-production-on-0-64-per-day" }
+      - { label: "Publish Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["AWS", "DevOps", "Kubernetes"] }
+      - { label: "Cover Image", name: "cover_image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ----------------------------------------------------------------------------
+  # 2. Services Collection (One markdown file per service)
+  # ----------------------------------------------------------------------------
+  - name: "services"
+    label: "Services"
+    label_singular: "Service"
+    folder: "content/services"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    extension: "md"
+    fields:
+      - { label: "Service Name", name: "name", widget: "string" }
+      - { label: "Price", name: "price", widget: "string", hint: "e.g. from $1,800 or $350" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Timeline / Delivery", name: "timeline", widget: "string", hint: "e.g. 1-2 weeks or 48hr delivery" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Core Service", value: "core" }
+          - { label: "Micro-Service (Quick Win)", value: "micro" }
+        default: "core"
+
+  # ----------------------------------------------------------------------------
+  # 3. Portfolio Case Studies Collection
+  # ----------------------------------------------------------------------------
+  - name: "portfolio"
+    label: "Portfolio Case Studies"
+    label_singular: "Case Study"
+    folder: "content/portfolio"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    extension: "md"
+    fields:
+      - { label: "Project Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Tech Stack", name: "stack", widget: "list", default: ["AWS", "Terraform", "Docker"] }
+      - { label: "Results & Business Impact", name: "results", widget: "text" }
+      - { label: "Project Cover Image", name: "image", widget: "image", required: false }
+      - { label: "GitHub URL", name: "github_url", widget: "string", required: false }
+      - { label: "Live Demo URL", name: "live_url", widget: "string", required: false }
+
+  # ----------------------------------------------------------------------------
+  # 4. Experience History (Single JSON configuration file)
+  # ----------------------------------------------------------------------------
+  - name: "experience"
+    label: "Experience"
+    files:
+      - file: "content/experience.json"
+        label: "Experience History"
+        name: "experience_history"
+        fields:
+          - { label: "Role", name: "role", widget: "string", default: "DevOps Engineer" }
+          - { label: "Company / Engagement", name: "company", widget: "string" }
+          - { label: "Period", name: "period", widget: "string", hint: "e.g. 2024 — Present" }
+          - { label: "Description", name: "description", widget: "text" }

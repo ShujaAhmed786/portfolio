@@ -1,0 +1,21 @@
+import { NextResponse } from "next/server";
+import fs from "fs";
+import path from "path";
+
+export const dynamic = "force-static";
+
+export async function GET() {
+  try {
+    const filePath = path.join(process.cwd(), "public", "admin", "index.html");
+    const html = fs.readFileSync(filePath, "utf-8");
+    return new NextResponse(html, {
+      status: 200,
+      headers: {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+      },
+    });
+  } catch {
+    return new NextResponse("Admin portal not found", { status: 404 });
+  }
+}

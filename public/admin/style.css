@@ -1,0 +1,210 @@
+/* ==============================================================================
+   Decap CMS Custom Theme: Shuja Ahmed DevOps Portfolio
+   Brand Colors:
+   - Navy: #0A1628 (Background)
+   - Deep Tech Surface: #0E1E36 / #132744 (Cards, modals, inputs)
+   - Accent Teal: #14B8A6 (Primary action, highlights, active nav)
+   - Accent Cyan Glow: #2DD4BF (Hover states, glows)
+   - Borders: #1E3A5F
+   - Text: #FFFFFF / #E2E8F0 / #94A3B8
+   ============================================================================== */
+
+:root {
+  --navy-bg: #0A1628;
+  --navy-surface: #0E1E36;
+  --navy-elevated: #132744;
+  --teal-accent: #14B8A6;
+  --teal-glow: #2DD4BF;
+  --border-color: #1E3A5F;
+  --text-main: #FFFFFF;
+  --text-muted: #94A3B8;
+}
+
+/* Global Body & Document */
+body {
+  background-color: var(--navy-bg) !important;
+  color: var(--text-main) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Helvetica Neue", sans-serif !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------------------------------------------------------------------
+   Authentication & Login Screen Styling
+   ------------------------------------------------------------------------------ */
+[class*="AuthenticationPage"],
+[class*="StyledAuthenticationPage"],
+[class*="LoginContainer"] {
+  background-color: var(--navy-bg) !important;
+  background-image:
+    radial-gradient(circle at 50% 20%, rgba(20, 184, 166, 0.12) 0%, transparent 60%),
+    linear-gradient(to bottom, #070F1C, #0A1628) !important;
+}
+
+[class*="AuthenticationCard"],
+[class*="LoginCard"],
+[class*="StyledCard"] {
+  background: var(--navy-surface) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 20px rgba(20, 184, 166, 0.1) !important;
+  color: var(--text-main) !important;
+  padding: 32px !important;
+}
+
+[class*="LoginButton"],
+[class*="StyledAuthenticationPage"] button {
+  background-color: var(--teal-accent) !important;
+  color: #0A1628 !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 12px 24px !important;
+  letter-spacing: 0.02em !important;
+  box-shadow: 0 4px 14px rgba(20, 184, 166, 0.35) !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+}
+
+[class*="LoginButton"]:hover,
+[class*="StyledAuthenticationPage"] button:hover {
+  background-color: var(--teal-glow) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px rgba(45, 212, 191, 0.5) !important;
+}
+
+/* ------------------------------------------------------------------------------
+   Top Navigation & Header
+   ------------------------------------------------------------------------------ */
+header[class*="AppHeader"],
+[class*="TopBar"],
+nav[class*="AppHeader"] {
+  background-color: #070F1C !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+[class*="AppHeader"] a,
+[class*="AppHeader"] span {
+  color: var(--text-main) !important;
+}
+
+/* ------------------------------------------------------------------------------
+   Sidebar Navigation
+   ------------------------------------------------------------------------------ */
+aside[class*="SidebarContainer"],
+[class*="Sidebar"] {
+  background-color: #081120 !important;
+  border-right: 1px solid var(--border-color) !important;
+}
+
+[class*="SidebarNavLink"] {
+  color: var(--text-muted) !important;
+  border-radius: 8px !important;
+  margin: 4px 8px !important;
+  font-weight: 500 !important;
+  transition: all 0.15s ease !important;
+}
+
+[class*="SidebarNavLink"]:hover {
+  color: var(--teal-glow) !important;
+  background-color: rgba(20, 184, 166, 0.08) !important;
+}
+
+[class*="SidebarNavLink"][class*="active"],
+[class*="SidebarNavLink"]:focus {
+  color: var(--teal-accent) !important;
+  background-color: rgba(20, 184, 166, 0.15) !important;
+  border-left: 3px solid var(--teal-accent) !important;
+}
+
+/* ------------------------------------------------------------------------------
+   Buttons & Actions
+   ------------------------------------------------------------------------------ */
+button[class*="Button-default"],
+button[class*="Button-primary"],
+button[class*="StyledButton"] {
+  background-color: var(--teal-accent) !important;
+  color: #0A1628 !important;
+  font-weight: 600 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease !important;
+}
+
+button[class*="Button-primary"]:hover,
+button[class*="StyledButton"]:hover {
+  background-color: var(--teal-glow) !important;
+}
+
+button[class*="Button-light"] {
+  background-color: var(--navy-elevated) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+button[class*="Button-light"]:hover {
+  background-color: rgba(20, 184, 166, 0.1) !important;
+  border-color: var(--teal-accent) !important;
+  color: var(--teal-accent) !important;
+}
+
+/* ------------------------------------------------------------------------------
+   Cards, List Items, and Content Panels
+   ------------------------------------------------------------------------------ */
+[class*="CardList"],
+[class*="CardContainer"],
+[class*="CollectionCard"],
+[class*="ListItem"] {
+  background-color: var(--navy-surface) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 10px !important;
+  color: var(--text-main) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+[class*="CollectionCard"]:hover,
+[class*="ListItem"]:hover {
+  border-color: var(--teal-accent) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 12px rgba(20, 184, 166, 0.15) !important;
+}
+
+/* ------------------------------------------------------------------------------
+   Form Controls, Inputs, and Editors
+   ------------------------------------------------------------------------------ */
+input,
+textarea,
+select,
+[class*="Field"],
+[class*="ControlPane"] {
+  background-color: var(--navy-surface) !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-color) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--teal-accent) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(20, 184, 166, 0.25) !important;
+}
+
+/* ------------------------------------------------------------------------------
+   Branded Top Banner inside CMS
+   ------------------------------------------------------------------------------ */
+.decap-brand-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #070F1C;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.decap-brand-header strong {
+  color: var(--teal-accent);
+}
