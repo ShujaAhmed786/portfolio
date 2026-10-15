@@ -22,6 +22,7 @@ backend:
   name: github
   repo: ShujaAhmed786/portfolio
   branch: main
+  client_id: Ov23liKlYZjKtMayKA0l
   # Optional OAuth proxy endpoint (uncomment once OAuth proxy is deployed):
   # base_url: https://your-oauth-proxy.vercel.app
   # auth_endpoint: api/auth
