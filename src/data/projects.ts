@@ -57,7 +57,7 @@ export const projectsData: ProjectCaseStudy[] = [
     subtitle: "High-Throughput Freelance Contract Engine",
     tag: "Ultra-Lean Serverless",
     highlight: "Running at $0.64/day infrastructure cost",
-    githubUrl: "https://github.com/ShujaAhmed786",
+    githubUrl: "https://github.com/ShujaAhmed786/RateStack-App",
     problem:
       "An automated freelance contract indexing and market rate valuation platform needed to parse, evaluate, and index fluctuating developer market rates in near real-time. With seed funding constraints, the engineering team had a strict requirement: keep production infrastructure costs strictly under $1.00/day while remaining resilient to viral spikes.",
     solution:
@@ -89,7 +89,7 @@ export const projectsData: ProjectCaseStudy[] = [
     subtitle: "Real-Time Mobile Calorie & Health Tracker",
     tag: "Mobile Cloud & Microservices",
     highlight: "Flutter + AWS Asynchronous Architecture",
-    githubUrl: "https://github.com/ShujaAhmed786",
+    githubUrl: "https://github.com/ShujaAhmed786/FitLyfe",
     problem:
       "A fast-growing mobile nutrition and biometric tracking application built with Flutter was experiencing severe database connection spikes and synchronization bottlenecks during breakfast and dinner peak hours. Meal photo uploads clogged API threads, causing timeout errors and frustrated app store reviews.",
     solution:
