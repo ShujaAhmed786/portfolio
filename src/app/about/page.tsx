@@ -33,7 +33,7 @@ export default function AboutPage() {
     image: "https://shujaahmed.dev/images/profile.png",
     sameAs: [
       "https://github.com/ShujaAhmed786",
-      "https://www.linkedin.com/in/shujaahmed/",
+      "https://www.linkedin.com/in/shujaahmed-/",
     ],
     knowsAbout: [
       "Kubernetes",

@@ -119,7 +119,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com/in/shujaahmed/"
+                  href="https://www.linkedin.com/in/shujaahmed-/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-slate-300 hover:text-teal-accent transition-colors min-h-[44px]"

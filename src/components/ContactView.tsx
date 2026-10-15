@@ -114,7 +114,7 @@ export function ContactView() {
               </p>
             </div>
             <a
-              href="https://www.linkedin.com/in/shujaahmed/"
+              href="https://www.linkedin.com/in/shujaahmed-/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-devops-border bg-navy-900 px-4 py-3 text-xs font-semibold text-slate-200 hover:border-teal-accent hover:text-white transition-colors min-h-[48px]"

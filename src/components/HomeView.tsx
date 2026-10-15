@@ -77,8 +77,7 @@ export function HomeView() {
               className="text-base sm:text-xl text-slate-300 max-w-2xl leading-relaxed mb-10 font-normal"
             >
               I help founders and software engineering teams replace manual deploys with rock-solid{" "}
-              <span className="text-white font-medium">Terraform</span> automation, containerized{" "}
-              <span className="text-white font-medium">AWS ECS</span> architectures, and slashed cloud overhead.
+              <span className="text-white font-medium">Terraform</span> automation, containerized cloud architectures, and slashed cloud overhead.
             </motion.p>
 
             {/* Action Buttons with 48px tap targets */}
