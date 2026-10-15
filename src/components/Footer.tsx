@@ -12,16 +12,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand Col */}
           <div className="md:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="relative h-10 w-20 overflow-hidden rounded-lg border border-teal-accent/30 bg-navy-900 flex items-center justify-center shadow-[0_0_15px_rgba(20,184,166,0.2)]">
-                <Image
-                  src="/images/logo/logo.webp"
-                  alt="Shuja Ahmed - DevOps Engineer"
-                  width={80}
-                  height={40}
-                  className="h-10 w-auto object-contain"
-                />
-              </div>
+            <div className="flex items-center gap-3.5">
+              <Image
+                src="/images/logo/logo.png"
+                alt="Shuja Ahmed - DevOps Engineer"
+                width={56}
+                height={56}
+                className="h-14 w-14 object-contain drop-shadow-[0_0_12px_rgba(20,184,166,0.3)]"
+              />
               <div>
                 <span className="font-mono text-base font-bold text-white">Shuja Ahmed</span>
                 <span className="block text-xs font-mono text-teal-accent/80">DevOps Engineer</span>
