@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   FileText,
@@ -20,17 +21,47 @@ export function AboutView() {
   return (
     <div className="flex flex-col w-full">
       {/* About Hero */}
-      <AnimatedGridBackground className="py-16 md:py-24" showOrbs={true}>
+      <AnimatedGridBackground className="py-14 md:py-20" showOrbs={true}>
         <div className="mx-auto max-w-5xl px-[clamp(16px,4vw,60px)] text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-teal-accent/30 bg-teal-accent/10 px-4 py-1.5 text-xs font-mono text-teal-accent mb-4">
+            <div className="inline-flex items-center gap-2 rounded-full border border-teal-accent/30 bg-teal-accent/10 px-4 py-1.5 text-xs font-mono text-teal-accent mb-6">
               <Sparkles className="h-3.5 w-3.5" />
               The Engineering Journey
             </div>
+
+            {/* Profile Picture with Teal Ring and Glow */}
+            <div className="mb-8 flex justify-center">
+              <div className="relative group">
+                {/* Brand Teal Glow Effect */}
+                <div className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-teal-accent via-teal-glow to-cyan-400 opacity-60 blur-xl group-hover:opacity-90 transition-opacity duration-500" />
+
+                {/* Circular frame */}
+                <div className="relative h-56 w-56 sm:h-64 sm:w-64 md:h-72 md:w-72 rounded-full overflow-hidden border-2 border-teal-accent shadow-[0_0_35px_rgba(20,184,166,0.35)] bg-navy-950">
+                  <Image
+                    src="/images/profile.png"
+                    alt="Shuja Ahmed, DevOps and Cloud Engineer"
+                    width={288}
+                    height={288}
+                    priority
+                    className="h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                {/* Live Status Pill */}
+                <div className="absolute bottom-2 right-2 flex items-center gap-1.5 rounded-full bg-navy-950/95 border border-teal-accent/60 px-3 py-1 shadow-lg backdrop-blur-md text-[11px] font-mono text-teal-accent">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </span>
+                  <span>DevOps & Cloud</span>
+                </div>
+              </div>
+            </div>
+
             <h1 className="text-[clamp(1.85rem,4.5vw,3.5rem)] font-extrabold text-white tracking-tight leading-tight">
               From Script Writer to DevOps Engineer
             </h1>

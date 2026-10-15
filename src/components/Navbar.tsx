@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Terminal, ArrowRight, ShieldCheck } from "lucide-react";
+import { Menu, X, ArrowRight, ShieldCheck } from "lucide-react";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -51,8 +52,15 @@ export function Navbar() {
             href="/"
             className="group flex items-center gap-3 focus-visible:ring-2 focus-visible:ring-teal-accent rounded-lg p-1 min-h-[48px]"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-navy-850 border border-teal-accent/40 shadow-[0_0_15px_rgba(20,184,166,0.2)] group-hover:border-teal-accent transition-colors">
-              <Terminal className="h-5 w-5 text-teal-accent group-hover:scale-110 transition-transform" />
+            <div className="relative h-10 w-20 overflow-hidden rounded-lg border border-teal-accent/40 shadow-[0_0_15px_rgba(20,184,166,0.25)] group-hover:border-teal-accent group-hover:shadow-[0_0_20px_rgba(20,184,166,0.4)] transition-all bg-navy-950 flex items-center justify-center">
+              <Image
+                src="/images/logo/logo.webp"
+                alt="Shuja Ahmed - DevOps Engineer"
+                width={80}
+                height={40}
+                className="h-10 w-auto object-contain"
+                priority
+              />
             </div>
             <div className="flex flex-col">
               <span className="font-mono text-base font-bold text-white tracking-tight group-hover:text-teal-accent transition-colors">

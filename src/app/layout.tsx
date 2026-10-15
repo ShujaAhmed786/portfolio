@@ -62,7 +62,13 @@ export const metadata: Metadata = {
       "DevOps Engineer specializing in Kubernetes, AWS architectures, Terraform IaC, Jenkins CI/CD pipelines, and cloud cost reduction.",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png" },
+    ],
   },
 };
 

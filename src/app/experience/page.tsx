@@ -4,14 +4,14 @@ import { ExperienceView } from "@/components/ExperienceView";
 export const metadata: Metadata = {
   title: "DevOps Experience & Skills Matrix | Shuja Ahmed",
   description:
-    "Four-year DevOps engineering track record across Kubernetes (EKS/K3s), Jenkins 14-stage CI/CD pipelines, Istio, and Terraform.",
+    "Career experience of Shuja Ahmed: from script writer to cloud engineer and DevOps engineer specializing in Kubernetes, AWS, and CI/CD.",
   alternates: {
     canonical: "/experience",
   },
   openGraph: {
     title: "DevOps Experience & Skills Matrix | Shuja Ahmed",
     description:
-      "Four-year DevOps engineering track record across Kubernetes (EKS/K3s), Jenkins 14-stage CI/CD pipelines, Istio, and Terraform.",
+      "Career experience of Shuja Ahmed: from script writer to cloud engineer and DevOps engineer specializing in Kubernetes, AWS, and CI/CD.",
     url: "https://shujaahmed.dev/experience",
     type: "website",
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "DevOps Experience & Skills Matrix | Shuja Ahmed",
     description:
-      "Four-year DevOps engineering track record across Kubernetes (EKS/K3s), Jenkins 14-stage CI/CD pipelines, Istio, and Terraform.",
+      "Career experience of Shuja Ahmed: from script writer to cloud engineer and DevOps engineer specializing in Kubernetes, AWS, and CI/CD.",
   },
 };
 

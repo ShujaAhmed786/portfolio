@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { Terminal, Shield, ArrowUpRight, GitBranch, Linkedin, Mail } from "lucide-react";
+import Image from "next/image";
+import { Shield, ArrowUpRight, GitBranch, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,8 +13,14 @@ export function Footer() {
           {/* Brand Col */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-navy-850 border border-teal-accent/40 text-teal-accent">
-                <Terminal className="h-5 w-5" />
+              <div className="relative h-10 w-20 overflow-hidden rounded-lg border border-teal-accent/30 bg-navy-900 flex items-center justify-center shadow-[0_0_15px_rgba(20,184,166,0.2)]">
+                <Image
+                  src="/images/logo/logo.webp"
+                  alt="Shuja Ahmed - DevOps Engineer"
+                  width={80}
+                  height={40}
+                  className="h-10 w-auto object-contain"
+                />
               </div>
               <div>
                 <span className="font-mono text-base font-bold text-white">Shuja Ahmed</span>

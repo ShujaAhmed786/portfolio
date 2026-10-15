@@ -58,7 +58,7 @@ export function ExperienceView() {
               DevOps Engineering Experience & Skills
             </h1>
             <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-              Four years of freelance and contracting experience architecting reliable cloud environments, automating multi-stage CI/CD pipelines, and driving down infrastructure waste.
+              From script writing and web development to cloud architecture and production DevOps engineering: a career journey built on structural clarity and relentless automation.
             </p>
           </motion.div>
 
@@ -75,7 +75,7 @@ export function ExperienceView() {
                 }`}
               >
                 <Briefcase className="h-4 w-4" />
-                <span>Career Timeline (2020 — Present)</span>
+                <span>Career Timeline (2020 - Present)</span>
               </button>
               <button
                 type="button"
