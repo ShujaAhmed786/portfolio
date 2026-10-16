@@ -33,7 +33,15 @@ export function Reveal({
   useEffect(() => {
     // If reduced motion is requested by the operating system, show immediately
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion) {
+
+    // On touch devices, skip scroll-reveal choreography entirely: content
+    // appears instantly so users never stare at blank sections on mobile.
+    const isTouchDevice =
+      window.matchMedia("(pointer: coarse)").matches ||
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0;
+
+    if (prefersReducedMotion || isTouchDevice) {
       setIsRevealed(true);
       return;
     }
@@ -68,7 +76,12 @@ export function Reveal({
 
     observer.observe(element);
 
+    // Safety net: content must never stay hidden if the observer misfires
+    // (fast scroll, background tab, odd viewport). Force reveal after 2s.
+    const fallback = setTimeout(() => setIsRevealed(true), 2000);
+
     return () => {
+      clearTimeout(fallback);
       observer.disconnect();
     };
   }, [threshold, rootMargin, once]);

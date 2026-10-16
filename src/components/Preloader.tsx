@@ -17,8 +17,14 @@ export function Preloader() {
   const [progress, setProgress] = useState(0);
   const [isLifting, setIsLifting] = useState(false);
   const [isDone, setIsDone] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
+    setIsTouchDevice(
+      window.matchMedia("(pointer: coarse)").matches ||
+        "ontouchstart" in window ||
+        navigator.maxTouchPoints > 0
+    );
     // 1. Check if already seen in this browser session
     try {
       const hasSeen = sessionStorage.getItem(STORAGE_KEY);
@@ -47,6 +53,15 @@ export function Preloader() {
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
+    // On touch devices the full deploy sequence feels sluggish: run the
+    // counter ~2.5x faster and lift away quicker.
+    const touchDevice =
+      window.matchMedia("(pointer: coarse)").matches ||
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0;
+    const tickMs = touchDevice ? 15 : 38;
+    const liftMs = touchDevice ? 450 : 850;
+
     // Counter timer
     let currentVal = 0;
     const interval = setInterval(() => {
@@ -67,14 +82,14 @@ export function Preloader() {
             sessionStorage.setItem(STORAGE_KEY, "true");
           } catch {}
 
-          // Remove after lift animation completes (850ms)
+          // Remove after lift animation completes
           setTimeout(() => {
             document.body.style.overflow = originalOverflow;
             setIsDone(true);
-          }, 850);
+          }, liftMs);
         }, 220);
       }
-    }, 38);
+    }, tickMs);
 
     return () => {
       clearInterval(interval);
@@ -93,7 +108,9 @@ export function Preloader() {
     <div
       aria-live="polite"
       aria-label="Loading portfolio"
-      className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-navy-950 px-6 transition-transform duration-[850ms] [transition-timing-function:var(--ease-out-expo)] ${
+      className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-navy-950 px-6 transition-transform [transition-timing-function:var(--ease-out-expo)] ${
+        isTouchDevice ? "duration-[450ms]" : "duration-[850ms]"
+      } ${
         isLifting ? "-translate-y-full pointer-events-none" : "translate-y-0"
       }`}
     >

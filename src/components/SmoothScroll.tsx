@@ -11,7 +11,15 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
 
     // Respect prefers-reduced-motion
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion) {
+
+    // Never hijack native scrolling on touch devices: mobile browsers have
+    // highly optimized momentum scrolling, and Lenis makes it feel laggy.
+    const isTouchDevice =
+      window.matchMedia("(pointer: coarse)").matches ||
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0;
+
+    if (prefersReducedMotion || isTouchDevice) {
       return;
     }
 
