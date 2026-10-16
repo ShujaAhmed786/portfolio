@@ -11,6 +11,8 @@ import {
 import { projectsData } from "@/data/projects";
 import { ProjectCard } from "@/components/ProjectCard";
 import { AnimatedGridBackground } from "@/components/AnimatedGridBackground";
+import { Reveal } from "@/components/Reveal";
+import { RollText } from "@/components/RollText";
 
 export function PortfolioView() {
   const [selectedTag, setSelectedTag] = useState<string>("All");
@@ -93,12 +95,12 @@ export function PortfolioView() {
           ))}
         </div>
 
-        {/* 3D Tilt Cards Grid (3 Projects) */}
+        {/* 3D Tilt Cards Grid with Staggered Wipe Reveal */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {filteredProjects.map((project) => (
-            <div key={project.id} className="h-full">
+          {filteredProjects.map((project, idx) => (
+            <Reveal key={project.id} staggerIndex={idx} className="h-full">
               <ProjectCard project={project} />
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -123,16 +125,16 @@ export function PortfolioView() {
                   href="https://calendly.com/shujaahmed198/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-5 py-3 text-xs font-bold text-navy-950 shadow-[0_0_20px_rgba(20,184,166,0.3)] hover:bg-teal-glow transition-all min-h-[48px]"
+                  className="group/cta inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-5 py-3 text-xs font-bold text-navy-950 shadow-[0_0_20px_rgba(20,184,166,0.3)] hover:bg-teal-glow transition-all min-h-[48px]"
                 >
-                  <span>Discuss Your Project Architecture</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
+                  <RollText text="Discuss Your Project Architecture" />
+                  <ArrowRight className="h-3.5 w-3.5 group-hover/cta:translate-x-1 transition-transform" />
                 </a>
                 <Link
                   href="/services"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-devops-border bg-navy-900 px-5 py-3 text-xs font-semibold text-slate-200 hover:border-teal-accent/50 transition-colors min-h-[48px]"
+                  className="group/srv inline-flex items-center justify-center gap-2 rounded-xl border border-devops-border bg-navy-900 px-5 py-3 text-xs font-semibold text-slate-200 hover:border-teal-accent/50 transition-colors min-h-[48px]"
                 >
-                  <span>Explore Engineering Services</span>
+                  <RollText text="Explore Engineering Services" />
                 </Link>
               </div>
             </div>
@@ -164,10 +166,10 @@ export function PortfolioView() {
             href="https://calendly.com/shujaahmed198/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-7 py-3.5 text-sm font-bold text-navy-950 hover:bg-teal-glow shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all min-h-[48px]"
+            className="group/btn inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-7 py-3.5 text-sm font-bold text-navy-950 hover:bg-teal-glow shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all min-h-[48px]"
           >
-            <span>Book a free consultation</span>
-            <ArrowRight className="h-4 w-4" />
+            <RollText text="Book a free consultation" />
+            <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
           </a>
         </div>
       </section>

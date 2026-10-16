@@ -35,7 +35,19 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
         mono: ["var(--font-jetbrains-mono)", "monospace"],
+      },
+      transitionTimingFunction: {
+        "out-expo": "var(--ease-out-expo)",
+        "hover-swap": "var(--ease-hover)",
+        "general": "var(--ease-general)",
+      },
+      transitionDuration: {
+        reveal: "var(--duration-reveal)",
+        fast: "var(--duration-fast)",
+        normal: "var(--duration-normal)",
+        slow: "var(--duration-slow)",
       },
       backgroundImage: {
         "grid-pattern": "radial-gradient(rgba(20, 184, 166, 0.15) 1px, transparent 1px)",

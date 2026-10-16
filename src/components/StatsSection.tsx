@@ -44,7 +44,7 @@ export function StatsSection() {
   ];
 
   return (
-    <section className="relative py-14 px-[clamp(16px,4vw,60px)] max-w-7xl mx-auto w-full">
+    <section id="stats-section" className="relative py-14 px-[clamp(16px,4vw,60px)] max-w-7xl mx-auto w-full">
       <h2 className="sr-only">Production Metrics & Performance Benchmarks</h2>
       <div className="rounded-3xl border border-devops-border bg-navy-850/80 p-6 sm:p-8 md:p-12 shadow-2xl backdrop-blur-xl relative overflow-hidden">
         {/* Subtle accent glow */}
@@ -77,7 +77,7 @@ export function StatsSection() {
                     </span>
                   </div>
 
-                  <div className="font-mono text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+                  <div className="font-mono text-4xl sm:text-5xl font-extrabold text-teal-accent tracking-tight">
                     <CountUp
                       prefix={stat.prefix}
                       end={stat.end}

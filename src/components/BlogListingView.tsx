@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { getAllPosts } from "@/data/posts";
 import { AnimatedGridBackground } from "@/components/AnimatedGridBackground";
+import { RollText } from "@/components/RollText";
 
 export function BlogListingView() {
   const posts = getAllPosts();
@@ -101,6 +102,8 @@ export function BlogListingView() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: idx * 0.05 }}
                 className="group relative flex flex-col justify-between rounded-3xl border border-devops-border bg-navy-850/80 p-6 sm:p-8 backdrop-blur-md hover:border-teal-accent/50 hover:shadow-[0_10px_35px_-5px_rgba(20,184,166,0.2)] transition-all duration-300"
+                data-cursor="READ"
+                data-cursor-type="blog"
               >
                 <div>
                   {/* Top Metadata */}
@@ -142,8 +145,8 @@ export function BlogListingView() {
                     ))}
                   </div>
 
-                  <span className="inline-flex items-center gap-1 text-xs font-mono font-semibold text-teal-accent group-hover:text-teal-glow transition-colors whitespace-nowrap min-h-[48px] items-center">
-                    <span>Read Guide</span>
+                  <span className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-teal-accent group-hover:text-teal-glow transition-colors whitespace-nowrap min-h-[48px] items-center">
+                    <RollText text="Read Guide" />
                     <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight, ShieldCheck } from "lucide-react";
+import { RollText } from "./RollText";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -78,13 +79,13 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-3.5 py-2 text-xs font-medium transition-colors rounded-full focus-visible:ring-2 focus-visible:ring-teal-accent min-h-[40px] flex items-center ${
+                  className={`group/nav relative px-3.5 py-2 text-xs font-medium transition-colors rounded-full focus-visible:ring-2 focus-visible:ring-teal-accent min-h-[40px] flex items-center ${
                     isActive
                       ? "text-teal-accent font-semibold"
                       : "text-slate-300 hover:text-white hover:bg-navy-750/50"
                   }`}
                 >
-                  {link.label}
+                  <RollText text={link.label} />
                   {isActive && (
                     <motion.div
                       layoutId="activeNavIndicator"
@@ -103,10 +104,10 @@ export function Navbar() {
               href="https://calendly.com/shujaahmed198/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-4 py-2.5 text-xs font-bold text-navy-950 shadow-[0_0_20px_rgba(20,184,166,0.3)] hover:bg-teal-glow hover:shadow-[0_0_25px_rgba(45,212,191,0.5)] active:scale-95 transition-all focus-visible:ring-2 focus-visible:ring-white min-h-[48px]"
+              className="group/cta inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-4 py-2.5 text-xs font-bold text-navy-950 shadow-[0_0_20px_rgba(20,184,166,0.3)] hover:bg-teal-glow hover:shadow-[0_0_25px_rgba(45,212,191,0.5)] active:scale-95 transition-all focus-visible:ring-2 focus-visible:ring-white min-h-[48px]"
             >
-              <span>Book Consultation</span>
-              <ArrowRight className="h-3.5 w-3.5" />
+              <RollText text="Book Consultation" />
+              <ArrowRight className="h-3.5 w-3.5 group-hover/cta:translate-x-0.5 transition-transform" />
             </a>
           </div>
 

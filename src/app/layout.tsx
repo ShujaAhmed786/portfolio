@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { CursorGlow } from "@/components/CursorGlow";
+import { CustomCursor } from "@/components/CustomCursor";
+import { Preloader } from "@/components/Preloader";
+import { SmoothScroll } from "@/components/SmoothScroll";
+import { ScrollProgressBar } from "@/components/ScrollProgressBar";
+import { PageTransitionOverlay } from "@/components/PageTransitionOverlay";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Analytics } from "@/components/Analytics";
 
@@ -16,6 +20,12 @@ const inter = Inter({
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains-mono",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
   display: "swap",
 });
 
@@ -80,7 +90,7 @@ export default function RootLayout({
   const jsonLdWebSite = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Shuja Ahmed — DevOps Engineer",
+    name: "Shuja Ahmed | DevOps Engineer",
     url: "https://shujaahmed.dev",
     description:
       "DevOps Engineer specializing in Kubernetes, AWS, Terraform, Jenkins CI/CD, and lean cloud architectures.",
@@ -93,18 +103,23 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} dark scroll-smooth`}>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} dark`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebSite) }}
         />
       </head>
-      <body className="bg-navy-900 text-slate-100 min-h-dvh flex flex-col font-sans antialiased selection:bg-teal-accent/30 selection:text-white overflow-x-hidden text-[16px]">
-        <CursorGlow />
-        <Navbar />
-        <main className="flex-grow pt-20">{children}</main>
-        <Footer />
+      <body className="bg-navy-900 text-slate-100 min-h-dvh flex flex-col font-sans antialiased selection:bg-teal-accent selection:text-navy-950 overflow-x-hidden text-[16px]">
+        <Preloader />
+        <ScrollProgressBar />
+        <PageTransitionOverlay />
+        <CustomCursor />
+        <SmoothScroll>
+          <Navbar />
+          <main className="flex-grow pt-20">{children}</main>
+          <Footer />
+        </SmoothScroll>
         <CookieConsent />
         <Analytics />
       </body>

@@ -224,7 +224,7 @@ export function AboutView() {
               &ldquo;Great infrastructure, like great writing, is completely invisible when done right. Your developers deploy fearlessly, your servers scale quietly, and your cloud bill never gives your CFO a heart attack.&rdquo;
             </p>
             <span className="block mt-4 font-mono text-xs text-teal-accent uppercase tracking-wider font-semibold">
-              — Shuja Ahmed
+              - Shuja Ahmed
             </span>
           </div>
 

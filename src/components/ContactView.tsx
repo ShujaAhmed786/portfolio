@@ -50,7 +50,7 @@ export function ContactView() {
               Book a Free 30-Minute DevOps Consultation
             </h1>
             <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-              Schedule directly on the calendar below or reach out via email. No pushy sales pitch—just a practical, high-value conversation about your infrastructure.
+              Schedule directly on the calendar below or reach out via email. No pushy sales pitch - just a practical, high-value conversation about your infrastructure.
             </p>
           </motion.div>
         </div>

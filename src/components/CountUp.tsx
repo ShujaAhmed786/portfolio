@@ -27,6 +27,12 @@ export function CountUp({
   useEffect(() => {
     if (!isInView) return;
 
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) {
+      setValue(end);
+      return;
+    }
+
     let startTime: number | null = null;
     let animationFrameId: number;
 

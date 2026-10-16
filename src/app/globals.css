@@ -11,6 +11,17 @@
   --navy-surface: #0E1E36;
   --navy-card: #132744;
   --border-color: #1E3A5F;
+
+  /* Motion System Easing Tokens */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-hover: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-general: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* Motion Duration Tokens */
+  --duration-fast: 200ms;
+  --duration-normal: 400ms;
+  --duration-slow: 800ms;
+  --duration-reveal: 900ms;
 }
 
 * {
@@ -18,8 +29,29 @@
 }
 
 html {
-  scroll-behavior: smooth;
   color-scheme: dark;
+}
+
+/* Lenis Smooth Scroll Recommended Rules */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }
 
 body {
@@ -28,13 +60,16 @@ body {
   font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
-  selection-background-color: rgba(20, 184, 166, 0.3);
-  selection-color: #FFFFFF;
 }
 
 ::selection {
-  background-color: rgba(20, 184, 166, 0.35);
-  color: #FFFFFF;
+  background-color: #14B8A6;
+  color: #0A1628;
+}
+
+::-moz-selection {
+  background-color: #14B8A6;
+  color: #0A1628;
 }
 
 /* Custom Scrollbar */
@@ -56,10 +91,10 @@ body {
   background: #14B8A6;
 }
 
-/* Accessibility Focus States */
+/* Accessibility Focus States (Teal 2px outline, 2px offset) */
 :focus-visible {
-  outline: 2px solid #14B8A6;
-  outline-offset: 3px;
+  outline: 2px solid #14B8A6 !important;
+  outline-offset: 2px !important;
   border-radius: 4px;
 }
 
@@ -98,3 +133,94 @@ body {
 .bg-radial-gradient {
   background: radial-gradient(circle at 50% 0%, rgba(20, 184, 166, 0.12) 0%, rgba(10, 22, 40, 0) 70%);
 }
+
+/* Reveal Primitives (Bottom-to-Top Clip-Path Wipe) */
+.reveal-clip {
+  clip-path: inset(100% 0% 0% 0%);
+  opacity: 0.001;
+  transform: translate3d(0, 16px, 0);
+  transition:
+    clip-path var(--duration-reveal, 900ms) var(--ease-out-expo),
+    transform var(--duration-reveal, 900ms) var(--ease-out-expo),
+    opacity 350ms ease-out;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: clip-path, transform, opacity;
+}
+
+.reveal-clip.is-revealed {
+  clip-path: inset(0% 0% 0% 0%);
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.reveal-clip-scale {
+  clip-path: inset(100% 0% 0% 0%);
+  opacity: 0.001;
+  transform: scale(1.08) translate3d(0, 12px, 0);
+  transition:
+    clip-path var(--duration-reveal, 900ms) var(--ease-out-expo),
+    transform var(--duration-reveal, 900ms) var(--ease-out-expo),
+    opacity 350ms ease-out;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: clip-path, transform, opacity;
+}
+
+.reveal-clip-scale.is-revealed {
+  clip-path: inset(0% 0% 0% 0%);
+  opacity: 1;
+  transform: scale(1) translate3d(0, 0, 0);
+}
+
+/* Reduced Motion Safety */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-clip,
+  .reveal-clip-scale {
+    clip-path: inset(0% 0% 0% 0%) !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .roll-text-primary,
+  .roll-text-duplicate {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .animate-marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Infinite Marquee Divider */
+@keyframes marquee-slide {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-slide 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+

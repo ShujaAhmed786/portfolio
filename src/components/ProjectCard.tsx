@@ -5,22 +5,36 @@ import { ProjectCaseStudy } from "@/data/projects";
 import { TiltCard } from "./TiltCard";
 import { ExternalLink, CheckCircle2, AlertTriangle, Lightbulb, Layers, Github } from "lucide-react";
 
+import { RollText } from "./RollText";
+
 interface ProjectCardProps {
   project: ProjectCaseStudy;
   featured?: boolean;
+  counter?: string;
 }
 
-export function ProjectCard({ project, featured = false }: ProjectCardProps) {
+export function ProjectCard({ project, featured = false, counter }: ProjectCardProps) {
   return (
     <TiltCard className="h-full">
-      <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-devops-border bg-navy-850/90 p-6 md:p-8 backdrop-blur-md transition-all duration-300 hover:border-teal-accent/50 hover:shadow-[0_10px_35px_-5px_rgba(20,184,166,0.18)]">
-        {/* Top bar with badge and links */}
+      <div
+        data-cursor="VIEW"
+        data-cursor-type="project"
+        className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-devops-border bg-navy-850/90 p-6 md:p-8 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-teal-accent/50 hover:shadow-[0_20px_45px_-10px_rgba(20,184,166,0.22)]"
+      >
+        {/* Top bar with counter, badge and links */}
         <div>
           <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-teal-accent/30 bg-teal-accent/10 px-3 py-1 font-mono text-xs font-medium text-teal-accent">
-              <span className="h-1.5 w-1.5 rounded-full bg-teal-accent animate-pulse" />
-              {project.tag}
-            </span>
+            <div className="flex items-center gap-2.5">
+              {counter && (
+                <span className="font-mono text-xs font-bold text-teal-accent bg-teal-accent/10 border border-teal-accent/30 rounded-md px-2 py-0.5 tracking-widest">
+                  {counter}
+                </span>
+              )}
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-teal-accent/30 bg-teal-accent/10 px-3 py-1 font-mono text-xs font-medium text-teal-accent">
+                <span className="h-1.5 w-1.5 rounded-full bg-teal-accent animate-pulse" />
+                {project.tag}
+              </span>
+            </div>
 
             <div className="flex items-center gap-2">
               {project.githubUrl && (
@@ -28,11 +42,11 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-devops-border bg-navy-900/80 px-3 py-2 text-xs font-mono text-slate-300 hover:text-white hover:border-teal-accent transition-colors min-h-[44px] min-w-[48px]"
+                  className="group/btn inline-flex items-center gap-1.5 rounded-lg border border-devops-border bg-navy-900/80 px-3 py-2 text-xs font-mono text-slate-300 hover:text-white hover:border-teal-accent transition-colors min-h-[44px] min-w-[48px]"
                   title={`View ${project.title} source code on GitHub`}
                 >
                   <Github className="h-3.5 w-3.5 text-teal-accent" />
-                  <span>GitHub</span>
+                  <RollText text="GitHub" />
                 </a>
               )}
 
@@ -41,10 +55,10 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-devops-border bg-navy-900/80 px-3 py-2 text-xs font-mono text-slate-300 hover:text-white hover:border-teal-accent transition-colors min-h-[44px] min-w-[48px]"
+                  className="group/btn inline-flex items-center gap-1.5 rounded-lg border border-devops-border bg-navy-900/80 px-3 py-2 text-xs font-mono text-slate-300 hover:text-white hover:border-teal-accent transition-colors min-h-[44px] min-w-[48px]"
                   title={`Visit ${project.title} live deployment`}
                 >
-                  <span>Live Demo</span>
+                  <RollText text="Live Demo" />
                   <ExternalLink className="h-3.5 w-3.5 text-teal-accent" />
                 </a>
               )}
