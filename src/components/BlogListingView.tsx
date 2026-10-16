@@ -80,7 +80,7 @@ export function BlogListingView() {
               key={tag}
               type="button"
               onClick={() => setSelectedTag(tag)}
-              className={`rounded-full px-4 py-2.5 text-xs font-mono transition-all min-h-[48px] flex items-center justify-center ${
+              className={`rounded-full px-4 py-2.5 text-xs font-mono transition-all active:scale-95 min-h-[48px] flex items-center justify-center ${
                 selectedTag === tag
                   ? "bg-teal-accent text-navy-950 font-bold shadow-[0_0_15px_rgba(20,184,166,0.3)]"
                   : "bg-navy-850 border border-devops-border text-slate-300 hover:border-teal-accent/50 hover:text-white"
@@ -101,7 +101,7 @@ export function BlogListingView() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: idx * 0.05 }}
-                className="group relative flex flex-col justify-between rounded-3xl border border-devops-border bg-navy-850/80 p-6 sm:p-8 backdrop-blur-md hover:border-teal-accent/50 hover:shadow-[0_10px_35px_-5px_rgba(20,184,166,0.2)] transition-all duration-300"
+                className="group relative flex flex-col justify-between rounded-3xl border border-devops-border bg-navy-850/80 p-6 sm:p-8 backdrop-blur-md hover:border-teal-accent/50 hover:shadow-[0_10px_35px_-5px_rgba(20,184,166,0.2)] active:scale-[0.985] active:border-teal-accent/50 transition-all duration-300"
                 data-cursor="READ"
                 data-cursor-type="blog"
               >

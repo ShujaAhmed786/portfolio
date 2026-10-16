@@ -53,7 +53,7 @@ export function StatsSection() {
           style={{ background: "#14B8A6" }}
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-devops-border/50">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
           {stats.map((stat, idx) => {
             const Icon = stat.icon;
             return (
@@ -63,9 +63,7 @@ export function StatsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className={`flex flex-col justify-between pt-6 sm:pt-0 ${
-                  idx !== 0 ? "sm:pl-6 lg:pl-8" : ""
-                }`}
+                className="flex flex-col justify-between rounded-2xl border border-devops-border/70 bg-navy-900/50 p-5 sm:p-6 backdrop-blur-sm transition-all duration-300 hover:border-teal-accent/40 active:scale-[0.99] active:border-teal-accent/50"
               >
                 <div>
                   <div className="flex items-center gap-2 mb-3">

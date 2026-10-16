@@ -108,7 +108,7 @@ export function Hero() {
         <CharSplitText
           line1="Ship it."
           line2="Run it."
-          className="text-[clamp(3.2rem,8.5vw,7.8rem)] mb-4"
+          className="text-[clamp(2.75rem,8.5vw,7.8rem)] mb-4"
           delayOffsetMs={100}
         />
 
@@ -133,7 +133,7 @@ export function Hero() {
             {/* Solid Teal Pill: View Work */}
             <Link
               href="/portfolio"
-              className="group/cta w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full bg-teal-accent px-9 py-4 text-sm sm:text-base font-bold text-navy-950 shadow-[0_0_28px_rgba(20,184,166,0.4)] hover:bg-teal-glow hover:shadow-[0_0_35px_rgba(45,212,191,0.6)] active:scale-95 transition-all focus-visible:ring-2 focus-visible:ring-white min-h-[48px]"
+              className="group/cta w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full bg-teal-accent px-9 py-4 text-sm sm:text-base font-bold text-navy-950 shadow-[0_0_28px_rgba(20,184,166,0.4)] hover:bg-teal-glow hover:shadow-[0_0_35px_rgba(45,212,191,0.6)] active:scale-95 active:shadow-none transition-all focus-visible:ring-2 focus-visible:ring-white min-h-[48px]"
             >
               <RollText text="View Work" />
               <ArrowRight className="h-4 w-4 group-hover/cta:translate-x-1 transition-transform" />
@@ -144,7 +144,7 @@ export function Hero() {
               href="https://calendly.com/shujaahmed198/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="group/cta w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full border border-devops-border bg-navy-850/80 px-8 py-4 text-sm sm:text-base font-semibold text-slate-200 hover:border-teal-accent/70 hover:text-white hover:bg-navy-800 transition-all focus-visible:ring-2 focus-visible:ring-teal-accent min-h-[48px]"
+              className="group/cta w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full border border-devops-border bg-navy-850/80 px-8 py-4 text-sm sm:text-base font-semibold text-slate-200 hover:border-teal-accent/70 hover:text-white hover:bg-navy-800 active:scale-95 transition-all focus-visible:ring-2 focus-visible:ring-teal-accent min-h-[48px]"
             >
               <RollText text="Get in Touch" />
               <Calendar className="h-4 w-4 text-teal-accent" />
@@ -155,14 +155,16 @@ export function Hero() {
         {/* Live DevOps Deployment Feed Card (Concept: The site 'ships itself') */}
         <Reveal delayMs={900} className="w-full max-w-xl">
           <div className="rounded-2xl border border-devops-border/80 bg-devops-terminal/90 p-4 sm:p-5 text-left font-mono text-xs shadow-2xl backdrop-blur-md">
-            <div className="flex items-center justify-between border-b border-devops-border/60 pb-2.5 mb-2.5">
-              <div className="flex items-center gap-2">
-                <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
-                <span className="h-2.5 w-2.5 rounded-full bg-amber-500/80" />
-                <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
-                <span className="ml-1 text-[11px] text-slate-400">deploy@shuja-cloud: ~/infrastructure</span>
+            <div className="flex items-center justify-between border-b border-devops-border/60 pb-2.5 mb-2.5 gap-2">
+              <div className="flex items-center gap-2 min-w-0">
+                <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-red-500/80" />
+                <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-amber-500/80" />
+                <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500/80" />
+                <span className="ml-1 text-[11px] text-slate-400 truncate max-w-[150px] xs:max-w-[220px] sm:max-w-none">
+                  deploy@shuja-cloud: ~/infrastructure
+                </span>
               </div>
-              <span className="text-[10px] text-teal-accent/80">pipeline #482</span>
+              <span className="text-[10px] text-teal-accent/80 shrink-0">pipeline #482</span>
             </div>
             <div className="space-y-1 text-slate-300">
               <p className="text-slate-400 truncate">
@@ -186,7 +188,7 @@ export function Hero() {
           type="button"
           onClick={handleScrollDown}
           aria-label="Scroll to content"
-          className="group flex flex-col items-center gap-1 text-slate-400 hover:text-teal-accent transition-colors focus:outline-none"
+          className="group flex flex-col items-center justify-center gap-1 p-2 min-h-[44px] min-w-[44px] text-slate-400 hover:text-teal-accent active:scale-95 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-accent rounded-lg"
         >
           <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-slate-400 group-hover:text-teal-accent transition-colors">
             scroll

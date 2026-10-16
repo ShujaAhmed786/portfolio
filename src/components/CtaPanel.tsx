@@ -13,7 +13,7 @@ export function CtaPanel() {
       className="relative w-full py-20 px-[clamp(16px,4vw,60px)] max-w-7xl mx-auto"
     >
       <Reveal className="w-full">
-        <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-teal-accent via-teal-glow to-teal-muted p-8 sm:p-14 md:p-20 text-center shadow-[0_20px_50px_rgba(20,184,166,0.3)]">
+        <div className="relative overflow-hidden rounded-3xl sm:rounded-[32px] bg-gradient-to-br from-teal-accent via-teal-glow to-teal-muted p-6 sm:p-14 md:p-20 text-center shadow-[0_20px_50px_rgba(20,184,166,0.3)]">
           {/* Subtle background tech line / grid accents */}
           <div
             aria-hidden="true"
@@ -26,7 +26,7 @@ export function CtaPanel() {
               <span>DIRECT ENGINEERING CONSULTATION</span>
             </div>
 
-            <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-navy-950 leading-[1.05]">
+            <h2 className="font-display text-3xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-navy-950 leading-[1.05]">
               Let&apos;s ship something.
             </h2>
 
@@ -49,7 +49,7 @@ export function CtaPanel() {
               {/* Secondary Inverted Pill */}
               <Link
                 href="/services"
-                className="group/srv w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-navy-950/30 bg-navy-950/10 px-8 py-4 text-base font-bold text-navy-950 hover:bg-navy-950/20 transition-all min-h-[48px]"
+                className="group/srv w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-navy-950/30 bg-navy-950/10 px-8 py-4 text-base font-bold text-navy-950 hover:bg-navy-950/20 active:scale-95 transition-all min-h-[48px]"
               >
                 <RollText text="Explore Services" duplicateClassName="text-navy-950 font-extrabold" />
               </Link>

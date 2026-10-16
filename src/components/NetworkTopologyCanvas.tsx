@@ -29,9 +29,10 @@ export function NetworkTopologyCanvas() {
     let height = (canvas.height = canvas.parentElement?.clientHeight || window.innerHeight);
 
     // Fewer nodes on small screens: the O(n^2) link pass is the main cost,
-    // and phones don't need the density.
+    // and phones have smaller viewports and GPUs.
     const isSmallScreen = width < 640;
-    const maxNodes = isSmallScreen ? 18 : 42;
+    const nodeCount = isSmallScreen ? 14 : Math.floor(Math.min(36, Math.max(18, width / 40)));
+    const maxDistance = isSmallScreen ? 90 : 130;
 
     const handleResize = () => {
       if (!canvas || !canvas.parentElement) return;
@@ -40,17 +41,13 @@ export function NetworkTopologyCanvas() {
     };
     window.addEventListener("resize", handleResize, { passive: true });
 
-    // Node count scales slightly with screen width
-    const nodeCount = Math.floor(Math.min(maxNodes, Math.max(22, width / 36)));
     const nodes: Node[] = Array.from({ length: nodeCount }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.35,
-      vy: (Math.random() - 0.5) * 0.35,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
       radius: Math.random() * 1.5 + 1.2,
     }));
-
-    const maxDistance = 135;
 
     const render = () => {
       ctx.clearRect(0, 0, width, height);

@@ -46,7 +46,7 @@ export function BlogTeaserSection() {
             <article
               data-cursor="READ"
               data-cursor-type="blog"
-              className="group relative flex h-full flex-col justify-between rounded-3xl border border-devops-border bg-navy-850/80 p-6 sm:p-8 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-teal-accent/50 hover:shadow-[0_15px_35px_-5px_rgba(20,184,166,0.2)]"
+              className="group relative flex h-full flex-col justify-between rounded-3xl border border-devops-border bg-navy-850/80 p-6 sm:p-8 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-teal-accent/50 hover:shadow-[0_15px_35px_-5px_rgba(20,184,166,0.2)] active:scale-[0.985] active:border-teal-accent/50"
             >
               <div>
                 {/* Metadata Row */}

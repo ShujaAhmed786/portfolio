@@ -37,8 +37,46 @@ export function CharSplitText({
     return () => clearTimeout(timer);
   }, [delayOffsetMs]);
 
-  const chars1 = Array.from(line1);
-  const chars2 = Array.from(line2);
+  // Split line into words and preserve character indexes for staggered rise
+  const renderLineWords = (line: string, baseOffsetIndex: number) => {
+    const words = line.split(" ");
+    let runningCharIndex = baseOffsetIndex;
+
+    return words.map((word, wordIndex) => {
+      const chars = Array.from(word);
+      const isLastWord = wordIndex === words.length - 1;
+
+      const renderedWord = (
+        <span key={wordIndex} className="inline-block whitespace-nowrap">
+          {chars.map((char, charIdx) => {
+            const currentIndex = runningCharIndex++;
+            return (
+              <span
+                key={charIdx}
+                className="inline-block overflow-hidden align-bottom py-1"
+              >
+                <span
+                  style={{
+                    transitionDelay: `${currentIndex * 35}ms`,
+                  }}
+                  className={`inline-block transition-transform duration-[850ms] [transition-timing-function:var(--ease-out-expo)] will-change-transform ${
+                    isRevealed ? "translate-y-0" : "translate-y-full"
+                  }`}
+                >
+                  {char}
+                </span>
+              </span>
+            );
+          })}
+          {!isLastWord && (
+            <span className="inline-block w-[0.28em]">&nbsp;</span>
+          )}
+        </span>
+      );
+
+      return renderedWord;
+    });
+  };
 
   return (
     <h1
@@ -48,26 +86,7 @@ export function CharSplitText({
       {/* Line 1 */}
       <span className={`block overflow-hidden ${line1ClassName}`}>
         <span className="inline-flex flex-wrap" aria-hidden="true">
-          {chars1.map((char, index) => {
-            const isSpace = char === " ";
-            return (
-              <span
-                key={index}
-                className="inline-block overflow-hidden align-bottom py-1"
-              >
-                <span
-                  style={{
-                    transitionDelay: `${index * 35}ms`,
-                  }}
-                  className={`inline-block transition-transform duration-[850ms] [transition-timing-function:var(--ease-out-expo)] will-change-transform ${
-                    isRevealed ? "translate-y-0" : "translate-y-full"
-                  } ${isSpace ? "w-[0.28em]" : ""}`}
-                >
-                  {isSpace ? "\u00A0" : char}
-                </span>
-              </span>
-            );
-          })}
+          {renderLineWords(line1, 0)}
         </span>
       </span>
 
@@ -76,27 +95,7 @@ export function CharSplitText({
         className={`block overflow-hidden bg-gradient-to-r from-teal-accent via-teal-glow to-cyan-400 bg-clip-text text-transparent pb-2 ${line2ClassName}`}
       >
         <span className="inline-flex flex-wrap" aria-hidden="true">
-          {chars2.map((char, index) => {
-            const isSpace = char === " ";
-            const totalIndex = chars1.length + index;
-            return (
-              <span
-                key={index}
-                className="inline-block overflow-hidden align-bottom py-1"
-              >
-                <span
-                  style={{
-                    transitionDelay: `${totalIndex * 35}ms`,
-                  }}
-                  className={`inline-block transition-transform duration-[850ms] [transition-timing-function:var(--ease-out-expo)] will-change-transform ${
-                    isRevealed ? "translate-y-0" : "translate-y-full"
-                  } ${isSpace ? "w-[0.28em]" : ""}`}
-                >
-                  {isSpace ? "\u00A0" : char}
-                </span>
-              </span>
-            );
-          })}
+          {renderLineWords(line2, line1.length)}
         </span>
       </span>
     </h1>

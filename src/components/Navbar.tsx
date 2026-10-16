@@ -38,6 +38,17 @@ export function Navbar() {
     setMobileMenuOpen(false);
   }, [pathname]);
 
+  // Accessibility: close mobile menu on Escape key press
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -141,10 +152,11 @@ export function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition-colors min-h-[48px] ${
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition-all active:scale-[0.98] min-h-[48px] ${
                       isActive
-                        ? "bg-teal-accent/15 text-teal-accent border border-teal-accent/30 font-semibold"
-                        : "text-slate-200 hover:bg-navy-850 hover:text-white"
+                        ? "bg-teal-accent/15 text-teal-accent border border-teal-accent/30 font-semibold active:bg-teal-accent/25"
+                        : "text-slate-200 hover:bg-navy-850 hover:text-white active:bg-navy-800"
                     }`}
                   >
                     <span>{link.label}</span>
@@ -157,7 +169,8 @@ export function Navbar() {
                   href="https://calendly.com/shujaahmed198/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-teal-accent px-5 py-3 text-sm font-bold text-navy-950 shadow-lg hover:bg-teal-glow transition-all min-h-[48px]"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-teal-accent px-5 py-3 text-sm font-bold text-navy-950 shadow-lg hover:bg-teal-glow active:scale-95 transition-all min-h-[48px]"
                 >
                   <span>Book Free Consultation</span>
                   <ArrowRight className="h-4 w-4" />

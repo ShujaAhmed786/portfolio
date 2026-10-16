@@ -32,6 +32,7 @@ export function TiltCard({
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
+    if (typeof window !== "undefined" && window.matchMedia("(hover: none)").matches) return;
     const rect = ref.current.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
@@ -66,6 +67,7 @@ export function TiltCard({
           transformStyle: "preserve-3d",
         }}
         whileHover={{ scale: 1.015 }}
+        whileTap={{ scale: 0.985 }}
         transition={{ duration: 0.2 }}
         className={`relative rounded-2xl transition-shadow duration-300 ${className}`}
       >

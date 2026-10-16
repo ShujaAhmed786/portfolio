@@ -223,4 +223,15 @@ body {
   animation-play-state: paused;
 }
 
+/* Touch device optimization: prevent sticky hover states and ensure instant reveals on touch */
+@media (hover: none) and (pointer: coarse) {
+  .reveal-clip,
+  .reveal-clip-scale {
+    clip-path: inset(0% 0% 0% 0%) !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 

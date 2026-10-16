@@ -116,16 +116,16 @@ export function Preloader() {
     >
       <div className="w-full max-w-xl rounded-2xl border border-devops-border bg-devops-terminal/95 p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
         {/* Terminal Window Header */}
-        <div className="flex items-center justify-between border-b border-devops-border/70 pb-4 mb-6">
-          <div className="flex items-center gap-2">
-            <span className="h-3 w-3 rounded-full bg-red-500/80" />
-            <span className="h-3 w-3 rounded-full bg-amber-500/80" />
-            <span className="h-3 w-3 rounded-full bg-emerald-500/80" />
-            <span className="ml-2 font-mono text-xs text-slate-400">
+        <div className="flex items-center justify-between border-b border-devops-border/70 pb-4 mb-6 gap-2">
+          <div className="flex items-center gap-2 min-w-0">
+            <span className="h-3 w-3 shrink-0 rounded-full bg-red-500/80" />
+            <span className="h-3 w-3 shrink-0 rounded-full bg-amber-500/80" />
+            <span className="h-3 w-3 shrink-0 rounded-full bg-emerald-500/80" />
+            <span className="ml-2 font-mono text-xs text-slate-400 truncate max-w-[150px] xs:max-w-[220px] sm:max-w-none">
               deploy@shujaahmed.dev: ~/production
             </span>
           </div>
-          <span className="font-mono text-[11px] text-teal-accent/80 tracking-wider">
+          <span className="font-mono text-[11px] text-teal-accent/80 tracking-wider shrink-0">
             AWS us-east-1
           </span>
         </div>

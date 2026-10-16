@@ -53,21 +53,21 @@ export function PortfolioView() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3.5 max-w-4xl mx-auto"
           >
-            <div className="rounded-xl border border-devops-border bg-navy-850/80 p-4 text-center backdrop-blur-sm">
-              <span className="block font-mono text-2xl font-bold text-teal-accent">99.98%</span>
-              <span className="text-xs text-slate-400 mt-1 block">Production System SLA</span>
+            <div className="rounded-xl border border-devops-border bg-navy-850/80 p-3 sm:p-4 text-center backdrop-blur-sm">
+              <span className="block font-mono text-lg sm:text-2xl font-bold text-teal-accent">99.98%</span>
+              <span className="text-[11px] sm:text-xs text-slate-400 mt-1 block">Production System SLA</span>
             </div>
-            <div className="rounded-xl border border-devops-border bg-navy-850/80 p-4 text-center backdrop-blur-sm">
-              <span className="block font-mono text-2xl font-bold text-teal-accent">Multi-AZ</span>
-              <span className="text-xs text-slate-400 mt-1 block">ECS & RDS Availability</span>
+            <div className="rounded-xl border border-devops-border bg-navy-850/80 p-3 sm:p-4 text-center backdrop-blur-sm">
+              <span className="block font-mono text-lg sm:text-2xl font-bold text-teal-accent">Multi-AZ</span>
+              <span className="text-[11px] sm:text-xs text-slate-400 mt-1 block">ECS & RDS Availability</span>
             </div>
-            <div className="rounded-xl border border-devops-border bg-navy-850/80 p-4 text-center backdrop-blur-sm">
-              <span className="block font-mono text-2xl font-bold text-teal-accent">$0.64 / day</span>
-              <span className="text-xs text-slate-400 mt-1 block">RateStack Daily AWS Cost</span>
+            <div className="rounded-xl border border-devops-border bg-navy-850/80 p-3 sm:p-4 text-center backdrop-blur-sm">
+              <span className="block font-mono text-lg sm:text-2xl font-bold text-teal-accent">$0.64 / day</span>
+              <span className="text-[11px] sm:text-xs text-slate-400 mt-1 block">RateStack Daily AWS Cost</span>
             </div>
-            <div className="rounded-xl border border-devops-border bg-navy-850/80 p-4 text-center backdrop-blur-sm">
-              <span className="block font-mono text-2xl font-bold text-teal-accent">-78%</span>
-              <span className="text-xs text-slate-400 mt-1 block">FitLyfe Ingestion Latency</span>
+            <div className="rounded-xl border border-devops-border bg-navy-850/80 p-3 sm:p-4 text-center backdrop-blur-sm">
+              <span className="block font-mono text-lg sm:text-2xl font-bold text-teal-accent">-78%</span>
+              <span className="text-[11px] sm:text-xs text-slate-400 mt-1 block">FitLyfe Ingestion Latency</span>
             </div>
           </motion.div>
         </div>
@@ -84,7 +84,7 @@ export function PortfolioView() {
               key={tag}
               type="button"
               onClick={() => setSelectedTag(tag)}
-              className={`rounded-full px-4 py-2.5 text-xs font-mono transition-all min-h-[48px] flex items-center justify-center ${
+              className={`rounded-full px-4 py-2.5 text-xs font-mono transition-all active:scale-95 min-h-[48px] flex items-center justify-center ${
                 selectedTag === tag
                   ? "bg-teal-accent text-navy-950 font-bold shadow-[0_0_15px_rgba(20,184,166,0.3)]"
                   : "bg-navy-850 border border-devops-border text-slate-300 hover:border-teal-accent/50 hover:text-white"

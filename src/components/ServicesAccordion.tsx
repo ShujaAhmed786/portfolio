@@ -63,12 +63,12 @@ export function ServicesAccordion() {
                 type="button"
                 onClick={() => toggleRow(idx)}
                 aria-expanded={isExpanded}
-                className="w-full py-6 sm:py-8 flex items-center justify-between text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-accent px-4 sm:px-6 min-h-[72px]"
+                className="w-full py-5 sm:py-8 flex items-center justify-between text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-accent px-3.5 sm:px-6 min-h-[64px] sm:min-h-[72px] active:bg-navy-800/40"
               >
-                <div className="flex items-center gap-4 sm:gap-8 flex-1 pr-4">
+                <div className="flex items-center gap-3 sm:gap-8 flex-1 pr-2 sm:pr-4 min-w-0">
                   {/* Row Number 01-06 */}
                   <span
-                    className={`font-mono text-sm sm:text-base font-bold transition-colors ${
+                    className={`font-mono text-sm sm:text-base font-bold shrink-0 transition-colors ${
                       isExpanded
                         ? "text-teal-accent"
                         : "text-teal-accent/60 group-hover:text-navy-950"
@@ -79,7 +79,7 @@ export function ServicesAccordion() {
 
                   {/* Service Title */}
                   <h3
-                    className={`font-display text-xl sm:text-2xl md:text-3xl font-bold tracking-tight transition-colors ${
+                    className={`font-display text-base sm:text-2xl md:text-3xl font-bold tracking-tight transition-colors leading-snug ${
                       isExpanded
                         ? "text-white"
                         : "text-slate-100 group-hover:text-navy-950"
@@ -103,9 +103,9 @@ export function ServicesAccordion() {
                 </div>
 
                 {/* Right price + Arrow icon */}
-                <div className="flex items-center gap-4 shrink-0">
+                <div className="flex items-center gap-2.5 sm:gap-4 shrink-0">
                   <span
-                    className={`font-mono text-xs sm:text-sm font-semibold transition-colors ${
+                    className={`font-mono text-xs sm:text-sm font-semibold transition-colors whitespace-nowrap ${
                       isExpanded
                         ? "text-teal-accent"
                         : "text-slate-300 group-hover:text-navy-950 font-bold"
@@ -115,13 +115,13 @@ export function ServicesAccordion() {
                   </span>
 
                   <div
-                    className={`flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-300 ${
+                    className={`flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full border transition-all duration-300 ${
                       isExpanded
                         ? "border-teal-accent bg-teal-accent text-navy-950 rotate-45"
                         : "border-devops-border text-slate-400 group-hover:border-navy-950 group-hover:text-navy-950 group-hover:rotate-45"
                     }`}
                   >
-                    <ArrowUpRight className="h-5 w-5" />
+                    <ArrowUpRight className="h-4 w-4 sm:h-5 sm:w-5" />
                   </div>
                 </div>
               </button>
