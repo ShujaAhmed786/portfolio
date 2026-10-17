@@ -10,10 +10,28 @@ interface BlogPostContentProps {
 export function BlogPostContent({ content }: BlogPostContentProps) {
   // Split markdown content by code blocks and text segments
   const renderFormattedText = (text: string) => {
-    // Process bold, inline code, and clean formatting
-    const parts = text.split(/(`[^`]+`|\*\*[^*]+\*\*)/g);
+    // Process links, bold, inline code, and clean formatting
+    const parts = text.split(/(\[[^\]]+\]\([^)]+\)|`[^`]+`|\*\*[^*]+\*\*)/g);
 
     return parts.map((part, i) => {
+      const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+      if (linkMatch) {
+        const label = linkMatch[1];
+        const href = linkMatch[2];
+        const isExternal = /^https?:\/\//.test(href);
+        return (
+          <a
+            key={i}
+            href={href}
+            {...(isExternal
+              ? { target: "_blank", rel: "noopener noreferrer" }
+              : {})}
+            className="text-teal-accent hover:text-teal-glow underline decoration-teal-accent/40 underline-offset-2 transition-colors"
+          >
+            {label}
+          </a>
+        );
+      }
       if (part.startsWith("`") && part.endsWith("`")) {
         return (
           <code
@@ -140,6 +158,30 @@ export function BlogPostContent({ content }: BlogPostContentProps) {
           ))}
         </ol>
       );
+      continue;
+    }
+
+    // Check for image: ![alt](src)
+    const imgMatch = line.trim().match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+    if (imgMatch) {
+      const alt = imgMatch[1];
+      const src = imgMatch[2];
+      blocks.push(
+        <figure key={`img-${blocks.length}`} className="my-8">
+          <img
+            src={src}
+            alt={alt}
+            loading="lazy"
+            className="w-full rounded-2xl border border-devops-border shadow-xl"
+          />
+          {alt && (
+            <figcaption className="mt-3 text-center text-xs font-mono text-slate-500">
+              {alt}
+            </figcaption>
+          )}
+        </figure>
+      );
+      i++;
       continue;
     }
 
