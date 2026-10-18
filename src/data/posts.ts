@@ -3,13 +3,18 @@ export interface BlogPost {
   slug: string;
   date: string;
   excerpt: string;
-  tags: string[
+  tags: string[];
+  readTime: string;
+  content: string;
+}
+
+export const blogPosts: BlogPost[] = [
   {
     title: "Is Kubernetes Overkill for Your Startup? An Honest Answer",
     slug: "is-kubernetes-overkill-for-startups",
     date: "2026-10-20",
     excerpt: "Most startups do not need Kubernetes. Here is how to know if you do, what it really costs, and what to use instead.",
-    tags: [""Kubernetes"", ""Startups"", ""AWS"", ""DevOps""],
+    tags: ["Kubernetes", "Startups", "AWS", "DevOps"],
     readTime: "8 min read",
     content: `Yes, Kubernetes is overkill for most startups. If your team is under 10 engineers, you deploy a few times a week, and your app fits on 2-3 servers, you do not need Kubernetes. You need Docker Compose on a single VM or ECS. Kubernetes starts making sense when you have multiple teams deploying independently, need auto-scaling across regions, or run 15+ microservices.
 
@@ -28,13 +33,11 @@ Total: **$180 to $250/month** before your app serves a single request. For a sta
 
 Compare that to the alternatives:
 
-| Setup | Monthly cost | Best for |
-|---|---|---|
-| Docker Compose on 1 EC2 t3.small | **$15** | Side projects, MVPs |
-| ECS on EC2 (2 tasks) | **$40-60** | Small teams, simple apps |
-| K3s on 1 EC2 t4g.small | **$19** | Teams that want K8s API without the bill |
-| EKS (minimal) | **$180-250** | 10+ engineers, multi-team |
-| EKS (production, multi-AZ) | **$350-500** | Scale-ups with real traffic |
+- **Docker Compose on 1 EC2 t3.small:** **$15/month.** Best for side projects and MVPs.
+- **ECS on EC2 (2 tasks):** **$40-60/month.** Best for small teams and simple apps.
+- **K3s on 1 EC2 t4g.small:** **$19/month.** Best for teams that want the K8s API without the bill.
+- **EKS (minimal):** **$180-250/month.** Best for 10+ engineers and multi-team setups.
+- **EKS (production, multi-AZ):** **$350-500/month.** Best for scale-ups with real traffic.
 
 I ran FitLyfe, a production calorie tracking app, on K3s for $0.64/day. Same containers, same uptime, one-tenth the cost of EKS.
 
@@ -91,20 +94,10 @@ You will know it is time for Kubernetes when:
 
 Until then, keep it boring. Your AWS bill and your sleep schedule will thank you.
 
----
+I help startups cut their AWS bills and set up infrastructure that does not require a platform team to maintain. If your Kubernetes bill looks wrong, it probably is. Let us talk.
 
----
-
-*I help startups cut their AWS bills and set up infrastructure that does not require a platform team to maintain. If your Kubernetes bill looks wrong, it probably is. Let us talk.*
-
-*See my infrastructure work: [github.com/ShujaAhmed786](https://github.com/ShujaAhmed786)*`,
+See my infrastructure work: [github.com/ShujaAhmed786](https://github.com/ShujaAhmed786)`,
   },
-];
-  readTime: string;
-  content: string;
-}
-
-export const blogPosts: BlogPost[] = [
   {
     title: "DevOps Engineers Are Idiots: The $400/Month Mistake",
     slug: "devops-engineers-are-idiots",
