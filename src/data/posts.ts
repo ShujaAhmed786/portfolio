@@ -38,6 +38,8 @@ Compare that to the alternatives:
 
 I ran FitLyfe, a production calorie tracking app, on K3s for $0.64/day. Same containers, same uptime, one-tenth the cost of EKS.
 
+![Startup deployment cost comparison: Docker Compose $15/mo, K3s $19/mo, AWS ECS $40-60/mo, Amazon EKS $180-250/mo](/images/blog/k8s-cost-comparison.webp)
+
 ## When is Kubernetes NOT overkill?
 
 Kubernetes earns its keep in specific situations:
