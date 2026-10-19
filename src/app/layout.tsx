@@ -30,7 +30,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://shujaahmed.dev"),
+  metadataBase: new URL("https://www.shujaahmed.dev"),
   title: {
     default: "DevOps Engineer | AWS, Kubernetes & CI/CD | Shuja Ahmed",
     template: "%s | Shuja Ahmed",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     "Istio Service Mesh",
     "Shuja Ahmed",
   ],
-  authors: [{ name: "Shuja Ahmed", url: "https://shujaahmed.dev" }],
+  authors: [{ name: "Shuja Ahmed", url: "https://www.shujaahmed.dev" }],
   alternates: {
     canonical: "/",
   },
@@ -57,16 +57,25 @@ export const metadata: Metadata = {
     title: "DevOps Engineer | AWS, Kubernetes & CI/CD | Shuja Ahmed",
     description:
       "DevOps Engineer specializing in Kubernetes, AWS architectures, Terraform IaC, Jenkins CI/CD pipelines, and cloud cost reduction.",
-    url: "https://shujaahmed.dev",
+    url: "https://www.shujaahmed.dev",
     siteName: "Shuja Ahmed Portfolio",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Shuja Ahmed - DevOps & Cloud Engineering",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "DevOps Engineer | AWS, Kubernetes & CI/CD | Shuja Ahmed",
     description:
       "DevOps Engineer specializing in Kubernetes, AWS architectures, Terraform IaC, Jenkins CI/CD pipelines, and cloud cost reduction.",
+    images: ["/og-image.png"],
   },
   icons: {
     icon: [
@@ -88,14 +97,14 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Shuja Ahmed | DevOps Engineer",
-    url: "https://shujaahmed.dev",
+    url: "https://www.shujaahmed.dev",
     description:
       "DevOps Engineer specializing in Kubernetes, AWS, Terraform, Jenkins CI/CD, and lean cloud architectures.",
     author: {
       "@type": "Person",
       name: "Shuja Ahmed",
       jobTitle: "DevOps Engineer",
-      url: "https://shujaahmed.dev",
+      url: "https://www.shujaahmed.dev",
     },
   };
 
