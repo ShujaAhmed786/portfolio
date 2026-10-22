@@ -1,0 +1,27 @@
+# Shuja Ahmed, DevOps and Cloud Engineer
+
+> Portfolio and blog of Shuja Ahmed, a freelance DevOps and Cloud engineer based in Karachi, Pakistan. He builds lean, automated cloud infrastructure on AWS, GCP and Azure: Kubernetes, Terraform, CI/CD, monitoring, and cloud cost optimization. His rule: if a human does it twice, automate it.
+
+## Services
+
+- [Services](https://www.shujaahmed.dev/services): Kubernetes cluster setup, Jenkins and GitHub Actions CI/CD, Terraform starter setups, monitoring with Prometheus and Grafana, GitOps with ArgoCD, cloud cost optimization, and lean infrastructure setup for startups and small teams.
+
+## About
+
+- [About](https://www.shujaahmed.dev/about): background and working style.
+- [Portfolio](https://www.shujaahmed.dev/portfolio): projects, including FitLyfe (a calorie tracker backend run on a small K3s fleet on AWS for about $0.64 a day) and LearnStack (a learning platform shipped on AWS ECS).
+- [Experience](https://www.shujaahmed.dev/experience)
+- [FAQ](https://www.shujaahmed.dev/faq)
+- [Contact](https://www.shujaahmed.dev/contact)
+
+## Blog
+
+- [Blog index](https://www.shujaahmed.dev/blog): practical DevOps and cloud cost writing.
+- [How I Run Production on $0.64/Day](https://www.shujaahmed.dev/blog/how-i-run-production-on-0-64-per-day): the FitLyfe story, a small fleet of cheap EC2 instances running K3s, what it cost and what actually broke.
+- [DevOps Engineers Are Idiots: The $400/Month Mistake](https://www.shujaahmed.dev/blog/devops-engineers-are-idiots): the managed services tax small teams pay without noticing.
+- [Is Kubernetes Overkill for Your Startup? An Honest Answer](https://www.shujaahmed.dev/blog/is-kubernetes-overkill-for-startups)
+
+## Elsewhere
+
+- [LinkedIn](https://www.linkedin.com/in/shujaahmed-/): Shuja Ahmed on LinkedIn.
+- [GitHub](https://github.com/ShujaAhmed786): open source projects and infrastructure code.
