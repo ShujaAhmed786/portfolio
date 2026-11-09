@@ -17,7 +17,7 @@ import { RollText } from "@/components/RollText";
 export function PortfolioView() {
   const [selectedTag, setSelectedTag] = useState<string>("All");
 
-  const tags = ["All", "Multi-Tenant Cloud", "Ultra-Lean Serverless", "Mobile Cloud & Microservices"];
+  const tags = ["All", "Kubernetes & GitOps", "Multi-Tenant Cloud", "Ultra-Lean Serverless", "Mobile Cloud & Microservices"];
 
   const filteredProjects =
     selectedTag === "All"
