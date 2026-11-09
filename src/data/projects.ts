@@ -18,6 +18,41 @@ export interface ProjectCaseStudy {
 
 export const projectsData: ProjectCaseStudy[] = [
   {
+    id: "retail-propensity-eks",
+    title: "Retail Analytics on EKS",
+    subtitle: "Production Amazon EKS Deployment with GitOps",
+    tag: "Kubernetes & GitOps",
+    highlight: "Terraform, Argo CD and zero-downtime deploys on EKS",
+    githubUrl: "https://github.com/ShujaAhmed786/retail-propensity-eks",
+    problem:
+      "An open-source retail subscription propensity app (a Streamlit machine learning app) needed a real production home on AWS: a proper network, a managed Kubernetes cluster, a CI pipeline with no static cloud keys, GitOps delivery, HTTPS, and monitoring. Everything had to be code so the whole environment could be rebuilt or torn down on demand.",
+    solution:
+      "Built the full DevOps layer with Terraform: a VPC (10.0.0.0/16) across two availability zones with public and private subnets and a low-cost fck-nat pair instead of managed NAT gateways, plus an Amazon EKS 1.36 cluster on Spot t4g.medium (ARM) nodes scaling from 2 to 4. GitHub Actions on a native ARM runner assumed an AWS role with OIDC (no static AWS keys anywhere), built the Docker image with the model pinned to scikit-learn 1.7.2, pushed it to Amazon ECR, and committed the new image tag back into the Helm values. Argo CD synced the app chart and the kube-prometheus-stack, one shared Application Load Balancer served the app and Grafana behind an ACM HTTPS certificate, and a $150/month AWS budget alarm watched the spend. The infrastructure has since been decommissioned; the repo rebuilds it as-is.",
+    stack: [
+      "Terraform",
+      "Amazon EKS",
+      "Kubernetes",
+      "Helm",
+      "Argo CD",
+      "GitHub Actions",
+      "Docker",
+      "Amazon ECR",
+      "Prometheus",
+      "Grafana",
+    ],
+    results: [
+      "Self-healing drill passed: app pods deleted on purpose were both replaced and running again in about 50 seconds",
+      "Zero-downtime deploys with maxUnavailable 0 and a pod disruption budget of 1",
+      "No static AWS keys anywhere: CI authenticates with GitHub OIDC only",
+      "Whole environment is code (Terraform, Helm, Argo CD), so a rebuild restores everything including the pinned Grafana setup",
+    ],
+    metrics: [
+      { value: "$4.82", label: "Daily AWS Cost (Measured)" },
+      { value: "~50s", label: "Self-Healing Pod Replacement" },
+      { value: "2-4", label: "Spot Nodes, Autoscaled" },
+    ],
+  },
+  {
     id: "learnstack",
     title: "LearnStack",
     subtitle: "White-Label Cloud Learning Management System",
