@@ -4,14 +4,14 @@ import { PortfolioView } from "@/components/PortfolioView";
 export const metadata: Metadata = {
   title: "DevOps Case Studies & Cloud Architecture | Shuja Ahmed",
   description:
-    "Explore production DevOps case studies: LearnStack (AWS ECS/RDS), RateStack ($0.64/day AWS serverless), and FitLyfe (Flutter + AWS).",
+    "Explore production DevOps case studies: Retail Analytics on Amazon EKS (Terraform, GitOps), LearnStack (AWS ECS/RDS), RateStack ($0.64/day AWS serverless), and FitLyfe (Flutter + AWS).",
   alternates: {
     canonical: "/portfolio",
   },
   openGraph: {
     title: "DevOps Case Studies & Cloud Architecture | Shuja Ahmed",
     description:
-      "Explore production DevOps case studies: LearnStack (AWS ECS/RDS), RateStack ($0.64/day AWS serverless), and FitLyfe (Flutter + AWS).",
+      "Explore production DevOps case studies: Retail Analytics on Amazon EKS (Terraform, GitOps), LearnStack (AWS ECS/RDS), RateStack ($0.64/day AWS serverless), and FitLyfe (Flutter + AWS).",
     url: "https://shujaahmed.dev/portfolio",
     type: "website",
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "DevOps Case Studies & Cloud Architecture | Shuja Ahmed",
     description:
-      "Explore production DevOps case studies: LearnStack (AWS ECS/RDS), RateStack ($0.64/day AWS serverless), and FitLyfe (Flutter + AWS).",
+      "Explore production DevOps case studies: Retail Analytics on Amazon EKS (Terraform, GitOps), LearnStack (AWS ECS/RDS), RateStack ($0.64/day AWS serverless), and FitLyfe (Flutter + AWS).",
   },
 };
 
