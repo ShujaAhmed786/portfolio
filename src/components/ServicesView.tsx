@@ -74,7 +74,7 @@ function ServiceCard({ service, index }: { service: ServiceOffer; index: number 
       className={`group relative flex flex-col justify-between rounded-lg border p-6 sm:p-7 backdrop-blur-md transition-all duration-300 ${
         service.highlighted
           ? "border-teal-accent/60 bg-navy-850/95"
-          : "border-devops-border bg-navy-850/80 hover:border-teal-accent/50 hover:"
+          : "border-devops-border bg-navy-850/80 hover:border-teal-accent/50"
       }`}
     >
       <div>

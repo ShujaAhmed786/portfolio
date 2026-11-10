@@ -19,7 +19,7 @@ export function ProjectCard({ project, featured = false, counter }: ProjectCardP
       <div
         data-cursor="VIEW"
         data-cursor-type="project"
-        className="group relative flex h-full flex-col justify-between overflow-hidden rounded-lg border border-devops-border bg-navy-850/90 p-6 md:p-8 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-teal-accent/50 hover: active:scale-[0.985] active:border-teal-accent/50"
+        className="group relative flex h-full flex-col justify-between overflow-hidden rounded-lg border border-devops-border bg-navy-850/90 p-6 md:p-8 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-teal-accent/50 active:scale-[0.985] active:border-teal-accent/50"
       >
         {/* Top bar with counter, badge and links */}
         <div>

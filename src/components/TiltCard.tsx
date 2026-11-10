@@ -26,10 +26,6 @@ export function TiltCard({
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], [tiltAmount, -tiltAmount]);
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], [-tiltAmount, tiltAmount]);
 
-  // Dynamic glare coordinates
-  const glareX = useTransform(mouseXSpring, [-0.5, 0.5], ["0%", "100%"]);
-  const glareY = useTransform(mouseYSpring, [-0.5, 0.5], ["0%", "100%"]);
-
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
     if (typeof window !== "undefined" && window.matchMedia("(hover: none)").matches) return;
@@ -71,17 +67,6 @@ export function TiltCard({
         transition={{ duration: 0.2 }}
         className={`relative rounded-lg transition-shadow duration-300 ${className}`}
       >
-        {/* Subtle light reflection overlay */}
-        <motion.div
-          className="pointer-events-none absolute -inset-px rounded-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-          style={{
-            background: useTransform(
-              [glareX, glareY],
-              ([gx, gy]) =>
-                `radial-gradient(400px circle at ${gx} ${gy}, rgba(20, 184, 166, 0.15), transparent 70%)`
-            ),
-          }}
-        />
         <div style={{ transform: "translateZ(20px)" }} className="relative z-10 h-full">
           {children}
         </div>

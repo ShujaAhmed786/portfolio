@@ -100,7 +100,7 @@ export function BlogListingView() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: idx * 0.05 }}
-                className="group relative flex flex-col justify-between rounded-lg border border-devops-border bg-navy-850/80 p-6 sm:p-8 backdrop-blur-md hover:border-teal-accent/50 hover: active:scale-[0.985] active:border-teal-accent/50 transition-all duration-300"
+                className="group relative flex flex-col justify-between rounded-lg border border-devops-border bg-navy-850/80 p-6 sm:p-8 backdrop-blur-md hover:border-teal-accent/50 active:scale-[0.985] active:border-teal-accent/50 transition-all duration-300"
                 data-cursor="READ"
                 data-cursor-type="blog"
               >

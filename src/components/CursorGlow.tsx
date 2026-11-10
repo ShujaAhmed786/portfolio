@@ -52,14 +52,10 @@ export function CursorGlow() {
       aria-hidden="true"
     >
       <motion.div
-        className="pointer-events-none absolute -translate-x-1/2 -translate-y-1/2 rounded-full"
+        className="pointer-events-none absolute -translate-x-1/2 -translate-y-1/2 h-5 w-5 rounded-full border border-teal-accent/30"
         style={{
           x: cursorX,
           y: cursorY,
-          width: 480,
-          height: 480,
-          background:
-            "radial-gradient(circle, rgba(20, 184, 166, 0.08) 0%, rgba(20, 184, 166, 0.02) 40%, rgba(10, 22, 40, 0) 70%)",
         }}
       />
     </motion.div>

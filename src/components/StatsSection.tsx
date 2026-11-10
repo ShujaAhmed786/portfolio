@@ -46,13 +46,7 @@ export function StatsSection() {
   return (
     <section id="stats-section" className="relative py-14 px-[clamp(16px,4vw,60px)] max-w-7xl mx-auto w-full">
       <h2 className="sr-only">Production Metrics & Performance Benchmarks</h2>
-      <div className="rounded-lg border border-devops-border bg-navy-850/80 p-6 sm:p-8 md:p-12 shadow-2xl backdrop-blur-xl relative overflow-hidden">
-        {/* Subtle accent glow */}
-        <div
-          className="absolute -top-32 right-1/4 h-64 w-64 rounded-full blur-3xl opacity-20 pointer-events-none"
-          style={{ background: "#14B8A6" }}
-        />
-
+      <div className="rounded-lg border border-devops-border bg-navy-850 p-6 sm:p-8 md:p-12 relative overflow-hidden">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
           {stats.map((stat, idx) => {
             const Icon = stat.icon;
@@ -63,7 +57,7 @@ export function StatsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="flex flex-col justify-between rounded-lg border border-devops-border/70 bg-navy-900/50 p-5 sm:p-6 backdrop-blur-sm transition-all duration-300 hover:border-teal-accent/40 active:scale-[0.99] active:border-teal-accent/50"
+                className="flex flex-col justify-between rounded-lg border border-devops-border/70 bg-navy-900 p-5 sm:p-6 transition-all duration-300 hover:border-teal-accent/40 active:scale-[0.99] active:border-teal-accent/50"
               >
                 <div>
                   <div className="flex items-center gap-2 mb-3">

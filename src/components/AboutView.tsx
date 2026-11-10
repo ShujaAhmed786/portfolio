@@ -31,12 +31,9 @@ export function AboutView() {
               The Engineering Journey
             </div>
 
-            {/* Profile Picture with Teal Ring and Glow */}
+            {/* Profile Picture with Teal Ring */}
             <div className="mb-8 flex justify-center">
               <div className="relative group">
-                {/* Brand Teal Glow Effect */}
-                <div className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-teal-accent via-teal-glow to-cyan-400 opacity-60 blur-xl group-hover:opacity-90 transition-opacity duration-500" />
-
                 {/* Circular frame */}
                 <div className="relative h-56 w-56 sm:h-64 sm:w-64 md:h-72 md:w-72 rounded-full overflow-hidden border-2 border-teal-accent bg-navy-950">
                   <Image

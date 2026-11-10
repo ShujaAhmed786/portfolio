@@ -12,7 +12,6 @@ export function CustomCursor() {
   const targetPos = useRef({ x: -100, y: -100 });
   const currentPos = useRef({ x: -100, y: -100 });
   const cursorRef = useRef<HTMLDivElement | null>(null);
-  const glowRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     // 1. Check if device is a fine pointer (desktop/mouse) and not touch
@@ -117,10 +116,6 @@ export function CustomCursor() {
         cursorRef.current.style.transform = transformStr;
       }
 
-      if (glowRef.current) {
-        glowRef.current.style.transform = transformStr;
-      }
-
       animationFrameId = requestAnimationFrame(render);
     };
 
@@ -141,22 +136,6 @@ export function CustomCursor() {
 
   return (
     <>
-      {/* Ambient subtle background glow follower */}
-      <div
-        ref={glowRef}
-        aria-hidden="true"
-        className="pointer-events-none fixed left-0 top-0 z-30 transition-opacity duration-300"
-        style={{
-          opacity: isVisible ? 1 : 0,
-          width: 440,
-          height: 440,
-          background:
-            "radial-gradient(circle, rgba(20, 184, 166, 0.08) 0%, rgba(20, 184, 166, 0.02) 40%, rgba(10, 22, 40, 0) 70%)",
-          borderRadius: "50%",
-          willChange: "transform",
-        }}
-      />
-
       {/* Main lerped interactive cursor & morph badge */}
       <div
         ref={cursorRef}

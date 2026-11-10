@@ -77,9 +77,6 @@ export function Hero() {
               : undefined
           }
         />
-
-        {/* Top-center radial wash to frame content */}
-        <div className="absolute inset-0 bg-radial-gradient" />
       </div>
 
       {/* Live Status Pill in Hero Corner */}
@@ -193,7 +190,7 @@ export function Hero() {
           <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-slate-400 group-hover:text-teal-accent transition-colors">
             scroll
           </span>
-          <ChevronDown className="h-4 w-4 text-teal-accent animate-bounce" />
+          <ChevronDown className="h-4 w-4 text-teal-accent" />
         </button>
       </div>
     </section>
