@@ -24,7 +24,7 @@ const DEPLOY_LOGS: DeployLogRow[] = [
   },
   {
     time: "14:03:02 UTC",
-    event: "WORKLOAD: Single-node production K3s cluster -> measured $0.64/day",
+    event: "WORKLOAD: FitLyfe production backend on K3s -> measured $0.64/day",
     status: "[PASS] $0.64/DAY",
   },
   {
