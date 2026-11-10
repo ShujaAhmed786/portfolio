@@ -130,9 +130,6 @@ body {
     linear-gradient(to bottom, rgba(30, 58, 95, 0.25) 1px, transparent 1px);
 }
 
-.bg-radial-gradient {
-  background: radial-gradient(circle at 50% 0%, rgba(20, 184, 166, 0.12) 0%, rgba(10, 22, 40, 0) 70%);
-}
 
 /* Reveal Primitives (Bottom-to-Top Clip-Path Wipe) */
 .reveal-clip {
