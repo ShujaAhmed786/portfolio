@@ -141,7 +141,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       />
 
       {/* Article Header */}
-      <AnimatedGridBackground className="py-14 md:py-24" showOrbs={true}>
+      <AnimatedGridBackground className="py-14 md:py-24" showOrbs={false}>
         <div className="mx-auto max-w-4xl px-[clamp(16px,4vw,60px)]">
           {/* Back link */}
           <Link
@@ -185,7 +185,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
 
           {/* Excerpt Lead */}
-          <p className="mt-6 text-base sm:text-lg text-teal-accent/90 font-medium leading-relaxed italic border-l-2 border-teal-accent pl-4">
+          <p className="mt-6 text-base sm:text-lg text-teal-accent/90 font-medium leading-relaxed italic">
             {post.excerpt}
           </p>
         </div>
@@ -193,7 +193,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Article Body */}
       <section className="relative py-12 px-[clamp(16px,4vw,60px)] max-w-4xl mx-auto w-full z-20">
-        <div className="rounded-3xl border border-devops-border bg-navy-850/80 p-6 sm:p-10 md:p-14 backdrop-blur-xl shadow-2xl">
+        <div className="rounded-lg border border-devops-border bg-navy-850/80 p-6 sm:p-10 md:p-14 backdrop-blur-xl shadow-2xl">
           <BlogPostContent content={post.content} />
 
           {/* Author Sign-off */}
@@ -219,7 +219,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
 
         {/* Mandatory CTA: Book a Free Consultation at end of every post */}
-        <div className="mt-12 rounded-3xl border border-teal-accent/40 bg-gradient-to-r from-navy-850 via-navy-800 to-navy-850 p-8 sm:p-12 text-center shadow-2xl relative overflow-hidden">
+        <div className="mt-12 rounded-lg border border-teal-accent/40 bg-gradient-to-r from-navy-850 via-navy-800 to-navy-850 p-8 sm:p-12 text-center shadow-2xl relative overflow-hidden">
           <div
             className="absolute -bottom-20 -right-20 h-48 w-48 rounded-full blur-3xl opacity-20 pointer-events-none"
             style={{ background: "#14B8A6" }}
@@ -242,7 +242,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 href="https://calendly.com/shujaahmed198/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-8 py-3.5 text-sm font-bold text-navy-950 shadow-[0_0_20px_rgba(20,184,166,0.3)] hover:bg-teal-glow transition-all min-h-[48px]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-8 py-3.5 text-sm font-bold text-navy-950 hover:bg-teal-glow transition-all min-h-[48px]"
               >
                 <span>Book a free consultation</span>
                 <ArrowRight className="h-4 w-4" />
