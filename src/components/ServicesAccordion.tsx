@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, ArrowRight, CheckCircle2, Clock, Sparkles } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Clock } from "lucide-react";
 import { coreServices } from "@/data/services";
 import { RollText } from "./RollText";
 
@@ -23,7 +23,7 @@ export function ServicesAccordion() {
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-teal-accent/30 bg-teal-accent/10 px-4 py-1.5 font-mono text-xs text-teal-accent mb-4">
-            <Sparkles className="h-3.5 w-3.5" />
+            <span className="h-1.5 w-1.5 bg-teal-accent" aria-hidden="true" />
             <span>Core Engineering Capabilities</span>
           </div>
           <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
@@ -145,7 +145,7 @@ export function ServicesAccordion() {
                       </div>
                       <span className="text-devops-border">•</span>
                       <div className="flex items-center gap-1.5 text-emerald-400">
-                        <CheckCircle2 className="h-3.5 w-3.5" />
+                        <span aria-hidden="true" className="font-mono text-sm leading-none text-teal-accent flex-shrink-0 mt-0.5">&gt;</span>
                         <span>100% reproducible Infrastructure as Code</span>
                       </div>
                     </div>
@@ -155,7 +155,7 @@ export function ServicesAccordion() {
                         href="https://calendly.com/shujaahmed198/30min"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group/cta inline-flex items-center gap-2 rounded-xl bg-teal-accent px-5 py-2.5 text-xs font-bold text-navy-950 hover:bg-teal-glow shadow-[0_0_15px_rgba(20,184,166,0.3)] transition-all min-h-[44px]"
+                        className="group/cta inline-flex items-center gap-2 rounded-xl bg-teal-accent px-5 py-2.5 text-xs font-bold text-navy-950 hover:bg-teal-glow transition-all min-h-[44px]"
                       >
                         <RollText text="Book Free Strategy Call" />
                         <ArrowRight className="h-3.5 w-3.5 group-hover/cta:translate-x-1 transition-transform" />

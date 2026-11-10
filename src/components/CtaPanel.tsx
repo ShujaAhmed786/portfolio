@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Sparkles, Terminal } from "lucide-react";
+import { ArrowRight, Terminal } from "lucide-react";
 import { RollText } from "./RollText";
 import { Reveal } from "./Reveal";
 
@@ -13,12 +13,7 @@ export function CtaPanel() {
       className="relative w-full py-20 px-[clamp(16px,4vw,60px)] max-w-7xl mx-auto"
     >
       <Reveal className="w-full">
-        <div className="relative overflow-hidden rounded-3xl sm:rounded-[32px] bg-gradient-to-br from-teal-accent via-teal-glow to-teal-muted p-6 sm:p-14 md:p-20 text-center shadow-[0_20px_50px_rgba(20,184,166,0.3)]">
-          {/* Subtle background tech line / grid accents */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 opacity-15 bg-[radial-gradient(#0A1628_1px,transparent_1px)] [background-size:24px_24px]"
-          />
+        <div className="relative overflow-hidden rounded-lg bg-teal-accent p-6 sm:p-14 md:p-20 text-center">
 
           <div className="relative z-10 max-w-3xl mx-auto space-y-6">
             <div className="inline-flex items-center gap-2 rounded-full bg-navy-950/15 border border-navy-950/20 px-4 py-1.5 font-mono text-xs font-bold text-navy-950 tracking-wider">

@@ -47,7 +47,7 @@ export function Footer() {
               alt="Shuja Ahmed - DevOps Engineer"
               width={52}
               height={52}
-              className="h-13 w-13 object-contain drop-shadow-[0_0_12px_rgba(20,184,166,0.35)]"
+              className="h-13 w-13 object-contain drop-"
             />
             <div>
               <span className="font-mono text-base font-bold text-white tracking-tight">Shuja Ahmed</span>

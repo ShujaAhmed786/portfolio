@@ -54,7 +54,7 @@ export function ManifestoSection() {
       className="relative w-full py-28 sm:py-36 px-[clamp(16px,4vw,60px)] max-w-6xl mx-auto text-center overflow-hidden"
     >
       {/* Decorative Mono Kicker */}
-      <div className="inline-flex items-center gap-2 rounded-full border border-teal-accent/30 bg-teal-accent/10 px-4 py-1.5 font-mono text-xs text-teal-accent mb-8 shadow-[0_0_15px_rgba(20,184,166,0.15)]">
+      <div className="inline-flex items-center gap-2 rounded-full border border-teal-accent/30 bg-teal-accent/10 px-4 py-1.5 font-mono text-xs text-teal-accent mb-8">
         <Terminal className="h-3.5 w-3.5" />
         <span>cat ~/manifesto.txt</span>
       </div>
@@ -71,7 +71,7 @@ export function ManifestoSection() {
               className={`inline-block mr-[0.3em] transition-all duration-500 ease-out ${
                 isIlluminated
                   ? word.highlight
-                    ? "text-teal-accent drop-shadow-[0_0_25px_rgba(20,184,166,0.65)] scale-100"
+                    ? "text-teal-accent drop- scale-100"
                     : "text-white scale-100"
                   : "text-slate-700/60 scale-[0.98]"
               }`}

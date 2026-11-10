@@ -35,7 +35,7 @@ export function CookieConsent() {
       role="region"
       className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-50 animate-in fade-in slide-in-from-bottom-5 duration-300"
     >
-      <div className="rounded-2xl border border-teal-accent/40 bg-navy-850/95 p-5 shadow-2xl backdrop-blur-xl text-slate-200">
+      <div className="rounded-lg border border-teal-accent/40 bg-navy-850/95 p-5 shadow-2xl backdrop-blur-xl text-slate-200">
         <div className="flex items-start gap-3">
           <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-teal-accent/10 border border-teal-accent/30 text-teal-accent">
             <Cookie className="h-5 w-5" />
@@ -78,7 +78,7 @@ export function CookieConsent() {
             <button
               type="button"
               onClick={() => handleConsent("accepted")}
-              className="inline-flex items-center justify-center rounded-xl border border-teal-accent bg-teal-accent px-4 py-2.5 text-xs font-bold text-navy-950 hover:bg-teal-glow shadow-[0_0_12px_rgba(20,184,166,0.3)] transition-all min-h-[48px]"
+              className="inline-flex items-center justify-center rounded-xl border border-teal-accent bg-teal-accent px-4 py-2.5 text-xs font-bold text-navy-950 hover:bg-teal-glow transition-all min-h-[48px]"
             >
               Accept Analytics
             </button>

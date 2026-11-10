@@ -7,7 +7,6 @@ import {
   Clock,
   ArrowRight,
   Shield,
-  Sparkles,
   Zap,
   Terminal,
   TrendingDown,
@@ -19,7 +18,6 @@ import {
   FileCode2,
   ShieldAlert,
   HelpCircle,
-  CheckCircle2,
 } from "lucide-react";
 import { coreServices, microServices, ServiceOffer } from "@/data/services";
 import { AnimatedGridBackground } from "@/components/AnimatedGridBackground";
@@ -73,10 +71,10 @@ function ServiceCard({ service, index }: { service: ServiceOffer; index: number 
       viewport={{ once: true }}
       transition={{ duration: 0.45, delay: index * 0.05 }}
       whileHover={{ y: -4 }}
-      className={`group relative flex flex-col justify-between rounded-2xl border p-6 sm:p-7 backdrop-blur-md transition-all duration-300 ${
+      className={`group relative flex flex-col justify-between rounded-lg border p-6 sm:p-7 backdrop-blur-md transition-all duration-300 ${
         service.highlighted
-          ? "border-teal-accent/60 bg-navy-850/95 shadow-[0_10px_35px_-5px_rgba(20,184,166,0.22)]"
-          : "border-devops-border bg-navy-850/80 hover:border-teal-accent/50 hover:shadow-[0_10px_30px_-5px_rgba(20,184,166,0.15)]"
+          ? "border-teal-accent/60 bg-navy-850/95"
+          : "border-devops-border bg-navy-850/80 hover:border-teal-accent/50 hover:"
       }`}
     >
       <div>
@@ -134,7 +132,7 @@ function ServiceCard({ service, index }: { service: ServiceOffer; index: number 
           href="https://calendly.com/shujaahmed198/30min"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex w-full items-center justify-center gap-2 rounded-xl bg-teal-accent px-4 py-3 text-xs sm:text-sm font-bold text-navy-950 shadow-[0_0_15px_rgba(20,184,166,0.25)] hover:bg-teal-glow hover:shadow-[0_0_25px_rgba(45,212,191,0.45)] active:scale-95 transition-all focus-visible:ring-2 focus-visible:ring-white min-h-[48px]"
+          className="flex w-full items-center justify-center gap-2 rounded-xl bg-teal-accent px-4 py-3 text-xs sm:text-sm font-bold text-navy-950 hover:bg-teal-glow active:scale-95 transition-all focus-visible:ring-2 focus-visible:ring-white min-h-[48px]"
         >
           <span>Book free consultation</span>
           <ArrowRight className="h-3.5 w-3.5" />
@@ -148,7 +146,7 @@ export function ServicesView() {
   return (
     <div className="flex flex-col w-full">
       {/* Services Header */}
-      <AnimatedGridBackground className="py-16 md:py-24" showOrbs={true}>
+      <AnimatedGridBackground className="py-16 md:py-24" showOrbs={false}>
         <div className="mx-auto max-w-5xl px-[clamp(16px,4vw,60px)] text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -156,7 +154,7 @@ export function ServicesView() {
             transition={{ duration: 0.5 }}
           >
             <div className="inline-flex items-center gap-2 rounded-full border border-teal-accent/30 bg-teal-accent/10 px-4 py-1.5 text-xs font-mono text-teal-accent mb-4">
-              <Sparkles className="h-3.5 w-3.5" />
+              <span className="h-1.5 w-1.5 bg-teal-accent" aria-hidden="true" />
               Transparent, High-ROI Engagements
             </div>
             <h1 className="text-[clamp(1.85rem,4.5vw,3.5rem)] font-extrabold text-white tracking-tight leading-tight">
@@ -201,7 +199,7 @@ export function ServicesView() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="mt-10 rounded-2xl border border-teal-accent/30 bg-gradient-to-r from-navy-850 via-navy-800 to-navy-850 p-6 sm:p-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl"
+            className="mt-10 rounded-lg border border-teal-accent/30 bg-gradient-to-r from-navy-850 via-navy-800 to-navy-850 p-6 sm:p-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl"
           >
             <div>
               <span className="font-mono text-xs uppercase tracking-wider text-teal-accent font-semibold">
@@ -218,7 +216,7 @@ export function ServicesView() {
               href="https://calendly.com/shujaahmed198/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-6 py-3.5 text-xs sm:text-sm font-bold text-navy-950 shadow-[0_0_15px_rgba(20,184,166,0.3)] hover:bg-teal-glow transition-all whitespace-nowrap flex-shrink-0 min-h-[48px]"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-6 py-3.5 text-xs sm:text-sm font-bold text-navy-950 hover:bg-teal-glow transition-all whitespace-nowrap flex-shrink-0 min-h-[48px]"
             >
               <span>Book free consultation</span>
               <ArrowRight className="h-4 w-4" />
@@ -256,7 +254,7 @@ export function ServicesView() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="mt-10 rounded-2xl border border-amber-400/30 bg-gradient-to-r from-navy-850 via-navy-800 to-navy-850 p-6 sm:p-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl"
+            className="mt-10 rounded-lg border border-amber-400/30 bg-gradient-to-r from-navy-850 via-navy-800 to-navy-850 p-6 sm:p-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl"
           >
             <div>
               <span className="font-mono text-xs uppercase tracking-wider text-amber-400 font-semibold">
@@ -273,7 +271,7 @@ export function ServicesView() {
               href="https://calendly.com/shujaahmed198/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-6 py-3.5 text-xs sm:text-sm font-bold text-navy-950 shadow-[0_0_15px_rgba(20,184,166,0.3)] hover:bg-teal-glow transition-all whitespace-nowrap flex-shrink-0 min-h-[48px]"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-6 py-3.5 text-xs sm:text-sm font-bold text-navy-950 hover:bg-teal-glow transition-all whitespace-nowrap flex-shrink-0 min-h-[48px]"
             >
               <span>Book free consultation</span>
               <ArrowRight className="h-4 w-4" />
@@ -282,7 +280,7 @@ export function ServicesView() {
         </section>
 
         {/* Working Together FAQ Strip */}
-        <section className="rounded-3xl border border-devops-border bg-navy-850/60 p-6 sm:p-10 backdrop-blur-md">
+        <section className="rounded-lg border border-devops-border bg-navy-850/60 p-6 sm:p-10 backdrop-blur-md">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div>
               <div className="flex items-center gap-2 text-teal-accent font-mono text-xs font-bold mb-2">

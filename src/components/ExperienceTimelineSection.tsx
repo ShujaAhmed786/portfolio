@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Briefcase, CheckCircle2, MapPin } from "lucide-react";
+import { ArrowRight, Briefcase, MapPin } from "lucide-react";
 import { experienceTimeline } from "@/data/experience";
 import { Reveal } from "./Reveal";
 import { RollText } from "./RollText";
@@ -40,7 +40,7 @@ export function ExperienceTimelineSection() {
           </div>
 
           {/* Quick SLA Status Card */}
-          <div className="hidden lg:block rounded-2xl border border-devops-border/70 bg-navy-850/80 p-4 font-mono text-xs text-slate-300 backdrop-blur-md">
+          <div className="hidden lg:block rounded-lg border border-devops-border/70 bg-navy-850/80 p-4 font-mono text-xs text-slate-300 backdrop-blur-md">
             <span className="text-teal-accent font-bold">{"// PRODUCTION STANDARD"}</span>
             <p className="mt-2 text-slate-400">
               100% reproducible Infrastructure as Code with zero manual click-ops.
@@ -52,7 +52,7 @@ export function ExperienceTimelineSection() {
         <div className="lg:col-span-8 space-y-8">
           {experienceTimeline.map((item, idx) => (
             <Reveal key={idx} staggerIndex={idx} className="w-full">
-              <div className="rounded-3xl border border-devops-border bg-navy-850/80 p-5 sm:p-8 backdrop-blur-md hover:border-teal-accent/50 hover:shadow-[0_15px_35px_-5px_rgba(20,184,166,0.18)] active:scale-[0.99] active:border-teal-accent/40 transition-all duration-300">
+              <div className="rounded-lg border border-devops-border bg-navy-850/80 p-5 sm:p-8 backdrop-blur-md hover:border-teal-accent/50 active:scale-[0.99] active:border-teal-accent/40 transition-all duration-300">
                 {/* Header: Period, Company, Location */}
                 <div className="flex flex-wrap items-center justify-between gap-2 border-b border-devops-border/60 pb-4 mb-4">
                   <div className="flex flex-wrap items-center gap-2">
@@ -91,7 +91,7 @@ export function ExperienceTimelineSection() {
                   <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
                     {item.achievements.map((ach, achIdx) => (
                       <li key={achIdx} className="flex items-start gap-2.5">
-                        <CheckCircle2 className="h-4 w-4 shrink-0 text-teal-accent mt-0.5" />
+                        <span aria-hidden="true" className="font-mono text-sm leading-none text-teal-accent flex-shrink-0 mt-0.5">&gt;</span>
                         <span className="leading-snug">{ach}</span>
                       </li>
                     ))}

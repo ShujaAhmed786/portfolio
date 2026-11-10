@@ -27,7 +27,7 @@ export function PortfolioView() {
   return (
     <div className="flex flex-col w-full">
       {/* Portfolio Header */}
-      <AnimatedGridBackground className="py-16 md:py-24" showOrbs={true}>
+      <AnimatedGridBackground className="py-16 md:py-24" showOrbs={false}>
         <div className="mx-auto max-w-5xl px-[clamp(16px,4vw,60px)] text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -86,7 +86,7 @@ export function PortfolioView() {
               onClick={() => setSelectedTag(tag)}
               className={`rounded-full px-4 py-2.5 text-xs font-mono transition-all active:scale-95 min-h-[48px] flex items-center justify-center ${
                 selectedTag === tag
-                  ? "bg-teal-accent text-navy-950 font-bold shadow-[0_0_15px_rgba(20,184,166,0.3)]"
+                  ? "bg-teal-accent text-navy-950 font-bold"
                   : "bg-navy-850 border border-devops-border text-slate-300 hover:border-teal-accent/50 hover:text-white"
               }`}
             >
@@ -107,7 +107,7 @@ export function PortfolioView() {
 
       {/* Architecture Deep-Dive Callout */}
       <section className="relative py-12 px-[clamp(16px,4vw,60px)] max-w-7xl mx-auto w-full">
-        <div className="rounded-3xl border border-devops-border bg-navy-850/70 p-6 sm:p-10 md:p-12 backdrop-blur-md">
+        <div className="rounded-lg border border-devops-border bg-navy-850/70 p-6 sm:p-10 md:p-12 backdrop-blur-md">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8">
               <div className="inline-flex items-center gap-2 rounded-full border border-teal-accent/30 bg-teal-accent/10 px-3 py-1 text-xs font-mono text-teal-accent mb-3">
@@ -125,7 +125,7 @@ export function PortfolioView() {
                   href="https://calendly.com/shujaahmed198/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group/cta inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-5 py-3 text-xs font-bold text-navy-950 shadow-[0_0_20px_rgba(20,184,166,0.3)] hover:bg-teal-glow transition-all min-h-[48px]"
+                  className="group/cta inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-5 py-3 text-xs font-bold text-navy-950 hover:bg-teal-glow transition-all min-h-[48px]"
                 >
                   <RollText text="Discuss Your Project Architecture" />
                   <ArrowRight className="h-3.5 w-3.5 group-hover/cta:translate-x-1 transition-transform" />
@@ -139,7 +139,7 @@ export function PortfolioView() {
               </div>
             </div>
 
-            <div className="lg:col-span-4 rounded-2xl border border-devops-border bg-navy-900/90 p-5 font-mono text-xs text-slate-300 space-y-2">
+            <div className="lg:col-span-4 rounded-lg border border-devops-border bg-navy-900/90 p-5 font-mono text-xs text-slate-300 space-y-2">
               <span className="text-teal-accent font-bold">{"// STANDARD CLOUD STACK"}</span>
               <p>• AWS ECS (Fargate) & Graviton ARM64</p>
               <p>• Terraform Modular Infrastructure as Code</p>
@@ -166,7 +166,7 @@ export function PortfolioView() {
             href="https://calendly.com/shujaahmed198/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="group/btn inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-7 py-3.5 text-sm font-bold text-navy-950 hover:bg-teal-glow shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all min-h-[48px]"
+            className="group/btn inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-7 py-3.5 text-sm font-bold text-navy-950 hover:bg-teal-glow transition-all min-h-[48px]"
           >
             <RollText text="Book a free consultation" />
             <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />

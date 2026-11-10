@@ -42,7 +42,7 @@ export function ScrollProgressBar() {
     >
       <div
         ref={barRef}
-        className="h-full w-full bg-teal-accent origin-left transition-transform duration-75 ease-out shadow-[0_0_8px_rgba(20,184,166,0.8)]"
+        className="h-full w-full bg-teal-accent origin-left transition-transform duration-75 ease-out"
         style={{ transform: "scaleX(0)" }}
       />
     </div>

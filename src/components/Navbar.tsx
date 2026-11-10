@@ -69,7 +69,7 @@ export function Navbar() {
               alt="Shuja Ahmed - DevOps Engineer"
               width={56}
               height={56}
-              className="h-14 w-14 object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_12px_rgba(20,184,166,0.35)]"
+              className="h-14 w-14 object-contain group-hover:scale-105 transition-transform duration-300 drop-"
               priority
             />
             <div className="flex flex-col">
@@ -115,7 +115,7 @@ export function Navbar() {
               href="https://calendly.com/shujaahmed198/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="group/cta inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-4 py-2.5 text-xs font-bold text-navy-950 shadow-[0_0_20px_rgba(20,184,166,0.3)] hover:bg-teal-glow hover:shadow-[0_0_25px_rgba(45,212,191,0.5)] active:scale-95 transition-all focus-visible:ring-2 focus-visible:ring-white min-h-[48px]"
+              className="group/cta inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-4 py-2.5 text-xs font-bold text-navy-950 hover:bg-teal-glow active:scale-95 transition-all focus-visible:ring-2 focus-visible:ring-white min-h-[48px]"
             >
               <RollText text="Book Consultation" />
               <ArrowRight className="h-3.5 w-3.5 group-hover/cta:translate-x-0.5 transition-transform" />

@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { projectsData } from "@/data/projects";
 import { ProjectCard } from "./ProjectCard";
 import { Reveal } from "./Reveal";
@@ -20,7 +20,7 @@ export function SelectedWorkSection() {
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-teal-accent/30 bg-teal-accent/10 px-4 py-1.5 font-mono text-xs text-teal-accent mb-4">
-            <Sparkles className="h-3.5 w-3.5" />
+            <span className="h-1.5 w-1.5 bg-teal-accent" aria-hidden="true" />
             <span>Proven Production Architectures</span>
           </div>
           <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">

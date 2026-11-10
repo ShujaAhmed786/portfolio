@@ -170,10 +170,10 @@ export function CustomCursor() {
         <div
           className={`flex items-center justify-center font-mono font-bold uppercase transition-all duration-[260ms] [transition-timing-function:var(--ease-out-expo)] ${
             isMorphActive
-              ? "h-20 w-20 rounded-full bg-teal-accent text-navy-950 shadow-[0_0_28px_rgba(20,184,166,0.55)] scale-100"
+              ? "h-20 w-20 rounded-full bg-teal-accent text-navy-950 scale-100"
               : cursorMode === "pointer"
               ? "h-4 w-4 rounded-full border-2 border-teal-accent bg-teal-accent/20 scale-100"
-              : "h-2.5 w-2.5 rounded-full bg-teal-accent shadow-[0_0_10px_rgba(20,184,166,0.8)] scale-100"
+              : "h-2.5 w-2.5 rounded-full bg-teal-accent scale-100"
           }`}
         >
           {isMorphActive && (

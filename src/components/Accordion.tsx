@@ -29,7 +29,7 @@ export function Accordion({ items, defaultOpenIndex = 0 }: AccordionProps) {
             key={item.id}
             className={`rounded-xl border transition-all duration-300 ${
               isOpen
-                ? "border-teal-accent/50 bg-navy-800/80 shadow-[0_0_20px_rgba(20,184,166,0.1)]"
+                ? "border-teal-accent/50 bg-navy-800/80"
                 : "border-devops-border/70 bg-navy-850/60 hover:border-devops-borderLight"
             }`}
           >

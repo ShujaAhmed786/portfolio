@@ -69,11 +69,11 @@ export function TiltCard({
         whileHover={{ scale: 1.015 }}
         whileTap={{ scale: 0.985 }}
         transition={{ duration: 0.2 }}
-        className={`relative rounded-2xl transition-shadow duration-300 ${className}`}
+        className={`relative rounded-lg transition-shadow duration-300 ${className}`}
       >
         {/* Subtle light reflection overlay */}
         <motion.div
-          className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          className="pointer-events-none absolute -inset-px rounded-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           style={{
             background: useTransform(
               [glareX, glareY],

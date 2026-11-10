@@ -92,7 +92,7 @@ export function CharSplitText({
 
       {/* Line 2 with Teal-to-Cyan Gradient Accent */}
       <span
-        className={`block overflow-hidden bg-gradient-to-r from-teal-accent via-teal-glow to-cyan-400 bg-clip-text text-transparent pb-2 ${line2ClassName}`}
+        className={`block overflow-hidden text-teal-accent pb-2 ${line2ClassName}`}
       >
         <span className="inline-flex flex-wrap" aria-hidden="true">
           {renderLineWords(line2, line1.length)}

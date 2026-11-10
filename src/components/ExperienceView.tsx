@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import {
   Calendar,
   Briefcase,
-  CheckCircle2,
   Cpu,
   Layers,
   ArrowRight,
@@ -43,7 +42,7 @@ export function ExperienceView() {
   return (
     <div className="flex flex-col w-full">
       {/* Experience Header */}
-      <AnimatedGridBackground className="py-16 md:py-24" showOrbs={true}>
+      <AnimatedGridBackground className="py-16 md:py-24" showOrbs={false}>
         <div className="mx-auto max-w-5xl px-[clamp(16px,4vw,60px)] text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -64,13 +63,13 @@ export function ExperienceView() {
 
           {/* Tab Controls */}
           <div className="mt-8 flex justify-center">
-            <div className="inline-flex rounded-2xl border border-devops-border bg-navy-850 p-1.5 shadow-xl">
+            <div className="inline-flex rounded-lg border border-devops-border bg-navy-850 p-1.5 shadow-xl">
               <button
                 type="button"
                 onClick={() => setActiveTab("timeline")}
                 className={`inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-xs font-mono transition-all min-h-[48px] ${
                   activeTab === "timeline"
-                    ? "bg-teal-accent text-navy-950 font-bold shadow-[0_0_15px_rgba(20,184,166,0.3)]"
+                    ? "bg-teal-accent text-navy-950 font-bold"
                     : "text-slate-300 hover:text-white"
                 }`}
               >
@@ -82,7 +81,7 @@ export function ExperienceView() {
                 onClick={() => setActiveTab("skills")}
                 className={`inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-xs font-mono transition-all min-h-[48px] ${
                   activeTab === "skills"
-                    ? "bg-teal-accent text-navy-950 font-bold shadow-[0_0_15px_rgba(20,184,166,0.3)]"
+                    ? "bg-teal-accent text-navy-950 font-bold"
                     : "text-slate-300 hover:text-white"
                 }`}
               >
@@ -110,7 +109,7 @@ export function ExperienceView() {
                 className="relative pl-6 md:pl-10"
               >
                 {/* Node marker on the line */}
-                <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full border-2 border-teal-accent bg-navy-900 shadow-[0_0_10px_rgba(20,184,166,0.5)]" />
+                <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full border-2 border-teal-accent bg-navy-900" />
 
                 {/* Period Badge - floating on left in desktop */}
                 <div className="md:absolute md:-left-36 md:top-0 md:w-28 text-left md:text-right mb-2 md:mb-0">
@@ -120,7 +119,7 @@ export function ExperienceView() {
                 </div>
 
                 {/* Card Container */}
-                <div className="rounded-3xl border border-devops-border bg-navy-850/80 p-6 sm:p-8 backdrop-blur-md hover:border-teal-accent/50 transition-colors">
+                <div className="rounded-lg border border-devops-border bg-navy-850/80 p-6 sm:p-8 backdrop-blur-md hover:border-teal-accent/50 transition-colors">
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                     <h3 className="text-xl sm:text-2xl font-bold text-white">
                       {item.role}
@@ -146,7 +145,7 @@ export function ExperienceView() {
                     <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
                       {item.achievements.map((ach, i) => (
                         <li key={i} className="flex items-start gap-2.5">
-                          <CheckCircle2 className="h-4 w-4 text-teal-accent flex-shrink-0 mt-0.5" />
+                          <span aria-hidden="true" className="font-mono text-sm leading-none text-teal-accent flex-shrink-0 mt-0.5">&gt;</span>
                           <span>{ach}</span>
                         </li>
                       ))}
@@ -180,7 +179,7 @@ export function ExperienceView() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: idx * 0.08 }}
-                  className="rounded-3xl border border-devops-border bg-navy-850/80 p-6 sm:p-7 backdrop-blur-md flex flex-col justify-between"
+                  className="rounded-lg border border-devops-border bg-navy-850/80 p-6 sm:p-7 backdrop-blur-md flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center gap-3 mb-5">
@@ -229,7 +228,7 @@ export function ExperienceView() {
 
       {/* Experience Footer CTA */}
       <section className="relative py-14 px-[clamp(16px,4vw,60px)] max-w-5xl mx-auto w-full text-center">
-        <div className="rounded-3xl border border-teal-accent/30 bg-gradient-to-r from-navy-850 to-navy-800 p-8 sm:p-12 shadow-xl">
+        <div className="rounded-lg border border-teal-accent/30 bg-gradient-to-r from-navy-850 to-navy-800 p-8 sm:p-12 shadow-xl">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
             Put 4+ years of specialized freelance DevOps experience to work
           </h2>
@@ -241,7 +240,7 @@ export function ExperienceView() {
               href="https://calendly.com/shujaahmed198/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-7 py-3.5 text-sm font-bold text-navy-950 hover:bg-teal-glow shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all min-h-[48px]"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-7 py-3.5 text-sm font-bold text-navy-950 hover:bg-teal-glow transition-all min-h-[48px]"
             >
               <span>Book a free consultation</span>
               <ArrowRight className="h-4 w-4" />

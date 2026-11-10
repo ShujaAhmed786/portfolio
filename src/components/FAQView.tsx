@@ -40,7 +40,7 @@ export function FAQView() {
   return (
     <div className="flex flex-col w-full">
       {/* FAQ Header */}
-      <AnimatedGridBackground className="py-16 md:py-24" showOrbs={true}>
+      <AnimatedGridBackground className="py-16 md:py-24" showOrbs={false}>
         <div className="mx-auto max-w-5xl px-[clamp(16px,4vw,60px)] text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -72,7 +72,7 @@ export function FAQView() {
             placeholder="Search questions by keyword (e.g. AWS, NDA, timeline, pricing)..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full rounded-2xl border border-devops-border bg-navy-850/90 py-3.5 pl-11 pr-4 text-sm text-white placeholder-slate-400 backdrop-blur-md focus:border-teal-accent focus:outline-none min-h-[48px]"
+            className="w-full rounded-lg border border-devops-border bg-navy-850/90 py-3.5 pl-11 pr-4 text-sm text-white placeholder-slate-400 backdrop-blur-md focus:border-teal-accent focus:outline-none min-h-[48px]"
           />
         </div>
 
@@ -85,7 +85,7 @@ export function FAQView() {
               onClick={() => setSelectedCategory(cat)}
               className={`rounded-full px-4 py-2.5 text-xs font-mono transition-all min-h-[48px] flex items-center justify-center ${
                 selectedCategory === cat
-                  ? "bg-teal-accent text-navy-950 font-bold shadow-[0_0_15px_rgba(20,184,166,0.3)]"
+                  ? "bg-teal-accent text-navy-950 font-bold"
                   : "bg-navy-850 border border-devops-border text-slate-300 hover:border-teal-accent/50 hover:text-white"
               }`}
             >
@@ -100,7 +100,7 @@ export function FAQView() {
             <Accordion items={filteredFaqs} />
           </div>
         ) : (
-          <div className="rounded-2xl border border-devops-border bg-navy-850/80 p-12 text-center">
+          <div className="rounded-lg border border-devops-border bg-navy-850/80 p-12 text-center">
             <p className="text-slate-400 text-sm">
               No matching questions found for &ldquo;{searchQuery}&rdquo;.
             </p>
@@ -118,7 +118,7 @@ export function FAQView() {
         )}
 
         {/* Still have questions card */}
-        <div className="mt-16 rounded-3xl border border-devops-border bg-navy-850/90 p-8 sm:p-10 backdrop-blur-md text-center">
+        <div className="mt-16 rounded-lg border border-devops-border bg-navy-850/90 p-8 sm:p-10 backdrop-blur-md text-center">
           <MessageSquare className="h-8 w-8 text-teal-accent mx-auto mb-3" />
           <h2 className="text-xl sm:text-2xl font-bold text-white">Have a specific or custom question?</h2>
           <p className="mt-2 text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
@@ -130,7 +130,7 @@ export function FAQView() {
               href="https://calendly.com/shujaahmed198/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-6 py-3.5 text-sm font-bold text-navy-950 hover:bg-teal-glow shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all min-h-[48px]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-6 py-3.5 text-sm font-bold text-navy-950 hover:bg-teal-glow transition-all min-h-[48px]"
             >
               <span>Book a free consultation</span>
               <ArrowRight className="h-4 w-4" />

@@ -3,7 +3,7 @@
 import React from "react";
 import { ProjectCaseStudy } from "@/data/projects";
 import { TiltCard } from "./TiltCard";
-import { ExternalLink, CheckCircle2, AlertTriangle, Lightbulb, Layers, Github } from "lucide-react";
+import { ExternalLink, AlertTriangle, Lightbulb, Layers, Github } from "lucide-react";
 
 import { RollText } from "./RollText";
 
@@ -19,7 +19,7 @@ export function ProjectCard({ project, featured = false, counter }: ProjectCardP
       <div
         data-cursor="VIEW"
         data-cursor-type="project"
-        className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-devops-border bg-navy-850/90 p-6 md:p-8 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-teal-accent/50 hover:shadow-[0_20px_45px_-10px_rgba(20,184,166,0.22)] active:scale-[0.985] active:border-teal-accent/50"
+        className="group relative flex h-full flex-col justify-between overflow-hidden rounded-lg border border-devops-border bg-navy-850/90 p-6 md:p-8 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-teal-accent/50 hover: active:scale-[0.985] active:border-teal-accent/50"
       >
         {/* Top bar with counter, badge and links */}
         <div>
@@ -115,7 +115,7 @@ export function ProjectCard({ project, featured = false, counter }: ProjectCardP
           {/* Key Results */}
           <div className="mt-6">
             <h4 className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-slate-200 mb-3">
-              <CheckCircle2 className="h-3.5 w-3.5 text-teal-accent" />
+              <span aria-hidden="true" className="font-mono text-sm leading-none text-teal-accent flex-shrink-0 mt-0.5">&gt;</span>
               <span>Measurable Business Results</span>
             </h4>
             <ul className="space-y-2 text-xs md:text-sm text-slate-300">

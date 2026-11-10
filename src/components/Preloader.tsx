@@ -114,7 +114,7 @@ export function Preloader() {
         isLifting ? "-translate-y-full pointer-events-none" : "translate-y-0"
       }`}
     >
-      <div className="w-full max-w-xl rounded-2xl border border-devops-border bg-devops-terminal/95 p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
+      <div className="w-full max-w-xl rounded-lg border border-devops-border bg-devops-terminal/95 p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
         {/* Terminal Window Header */}
         <div className="flex items-center justify-between border-b border-devops-border/70 pb-4 mb-6 gap-2">
           <div className="flex items-center gap-2 min-w-0">
@@ -151,7 +151,7 @@ export function Preloader() {
         {/* Teal Progress Bar */}
         <div className="h-1.5 w-full overflow-hidden rounded-full bg-navy-800 border border-devops-border/60 mb-6">
           <div
-            className="h-full bg-teal-accent shadow-[0_0_16px_rgba(20,184,166,0.8)] transition-all duration-75 ease-out"
+            className="h-full bg-teal-accent transition-all duration-75 ease-out"
             style={{ width: `${progress}%` }}
           />
         </div>

@@ -57,7 +57,7 @@ export function CopyEmailButton({
     <button
       onClick={handleCopy}
       type="button"
-      className={`relative inline-flex items-center justify-center gap-2.5 rounded-xl border border-devops-border bg-navy-850 px-5 py-3 text-sm font-medium text-white transition-all hover:border-teal-accent/60 hover:bg-navy-800 hover:shadow-[0_0_15px_rgba(20,184,166,0.15)] active:scale-95 focus-visible:ring-2 focus-visible:ring-teal-accent min-h-[48px] ${className}`}
+      className={`relative inline-flex items-center justify-center gap-2.5 rounded-xl border border-devops-border bg-navy-850 px-5 py-3 text-sm font-medium text-white transition-all hover:border-teal-accent/60 hover:bg-navy-800 hover: active:scale-95 focus-visible:ring-2 focus-visible:ring-teal-accent min-h-[48px] ${className}`}
     >
       {copied ? (
         <>

@@ -172,7 +172,7 @@ export function BlogPostContent({ content }: BlogPostContentProps) {
             src={src}
             alt={alt}
             loading="lazy"
-            className="w-full rounded-2xl border border-devops-border shadow-xl"
+            className="w-full rounded-lg border border-devops-border shadow-xl"
           />
           {alt && (
             <figcaption className="mt-3 text-center text-xs font-mono text-slate-500">
@@ -191,7 +191,7 @@ export function BlogPostContent({ content }: BlogPostContentProps) {
       blocks.push(
         <blockquote
           key={`quote-${blocks.length}`}
-          className="my-6 border-l-4 border-teal-accent bg-navy-850/70 py-3 px-5 rounded-r-xl text-slate-200 italic text-sm sm:text-base"
+          className="my-6 border border-devops-border bg-navy-850/70 py-3 px-5 rounded-lg text-slate-200 italic text-sm sm:text-base"
         >
           {renderFormattedText(quoteText)}
         </blockquote>

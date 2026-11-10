@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Rocket, Cpu, Activity, CheckCircle2, ArrowRight } from "lucide-react";
+import { Rocket, Cpu, Activity, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const PILLARS = [
@@ -69,7 +69,7 @@ export function PillarsSection() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
         {PILLARS.map((pillar, idx) => {
           const Icon = pillar.icon;
           return (
@@ -79,15 +79,11 @@ export function PillarsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
-              className="relative flex flex-col justify-between rounded-2xl border border-devops-border bg-navy-850/70 p-8 backdrop-blur-md hover:border-teal-accent/60 hover:shadow-[0_10px_35px_-5px_rgba(20,184,166,0.2)] transition-all duration-300 group"
+              className={`relative flex flex-col justify-between rounded-lg border border-devops-border bg-navy-850/70 p-8 hover:border-teal-accent/60 transition-colors duration-300 group ${idx === 0 ? "md:col-span-5" : idx === 1 ? "md:col-span-4" : "md:col-span-3"}`}
             >
-              {/* Pillar Accent Glow */}
-              <div
-                className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${pillar.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`}
-              />
 
               <div className="relative z-10">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-navy-900 border border-teal-accent/40 text-teal-accent shadow-[0_0_20px_rgba(20,184,166,0.25)] group-hover:scale-105 transition-transform mb-6">
+                <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-navy-900 border border-teal-accent/40 text-teal-accent mb-6">
                   <Icon className="h-7 w-7" />
                 </div>
 
@@ -115,7 +111,7 @@ export function PillarsSection() {
                   <ul className="space-y-2.5 text-xs text-slate-300">
                     {pillar.capabilities.map((cap, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2 className="h-4 w-4 text-teal-accent flex-shrink-0 mt-0.5" />
+                        <span aria-hidden="true" className="font-mono text-sm leading-none text-teal-accent flex-shrink-0 mt-0.5">&gt;</span>
                         <span>{cap}</span>
                       </li>
                     ))}

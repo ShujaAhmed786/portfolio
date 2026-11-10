@@ -9,7 +9,6 @@ import {
   Clock,
   ArrowRight,
   Search,
-  Sparkles,
 } from "lucide-react";
 import { getAllPosts } from "@/data/posts";
 import { AnimatedGridBackground } from "@/components/AnimatedGridBackground";
@@ -37,7 +36,7 @@ export function BlogListingView() {
   return (
     <div className="flex flex-col w-full">
       {/* Blog Hero Header */}
-      <AnimatedGridBackground className="py-16 md:py-24" showOrbs={true}>
+      <AnimatedGridBackground className="py-16 md:py-24" showOrbs={false}>
         <div className="mx-auto max-w-5xl px-[clamp(16px,4vw,60px)] text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -63,7 +62,7 @@ export function BlogListingView() {
                 placeholder="Search articles by topic, tool, or keyword..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full rounded-2xl border border-devops-border bg-navy-850/90 py-3.5 pl-11 pr-4 text-sm text-white placeholder-slate-400 backdrop-blur-md focus:border-teal-accent focus:outline-none min-h-[48px]"
+                className="w-full rounded-lg border border-devops-border bg-navy-850/90 py-3.5 pl-11 pr-4 text-sm text-white placeholder-slate-400 backdrop-blur-md focus:border-teal-accent focus:outline-none min-h-[48px]"
               />
             </div>
           </motion.div>
@@ -82,7 +81,7 @@ export function BlogListingView() {
               onClick={() => setSelectedTag(tag)}
               className={`rounded-full px-4 py-2.5 text-xs font-mono transition-all active:scale-95 min-h-[48px] flex items-center justify-center ${
                 selectedTag === tag
-                  ? "bg-teal-accent text-navy-950 font-bold shadow-[0_0_15px_rgba(20,184,166,0.3)]"
+                  ? "bg-teal-accent text-navy-950 font-bold"
                   : "bg-navy-850 border border-devops-border text-slate-300 hover:border-teal-accent/50 hover:text-white"
               }`}
             >
@@ -101,7 +100,7 @@ export function BlogListingView() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: idx * 0.05 }}
-                className="group relative flex flex-col justify-between rounded-3xl border border-devops-border bg-navy-850/80 p-6 sm:p-8 backdrop-blur-md hover:border-teal-accent/50 hover:shadow-[0_10px_35px_-5px_rgba(20,184,166,0.2)] active:scale-[0.985] active:border-teal-accent/50 transition-all duration-300"
+                className="group relative flex flex-col justify-between rounded-lg border border-devops-border bg-navy-850/80 p-6 sm:p-8 backdrop-blur-md hover:border-teal-accent/50 hover: active:scale-[0.985] active:border-teal-accent/50 transition-all duration-300"
                 data-cursor="READ"
                 data-cursor-type="blog"
               >
@@ -154,7 +153,7 @@ export function BlogListingView() {
             ))}
           </div>
         ) : (
-          <div className="rounded-3xl border border-devops-border bg-navy-850/80 p-12 text-center">
+          <div className="rounded-lg border border-devops-border bg-navy-850/80 p-12 text-center">
             <p className="text-slate-400 text-sm">
               No matching articles found for &ldquo;{searchQuery}&rdquo;.
             </p>
@@ -172,8 +171,8 @@ export function BlogListingView() {
         )}
 
         {/* Blog Consultation Banner */}
-        <div className="mt-16 rounded-3xl border border-teal-accent/30 bg-gradient-to-r from-navy-850 to-navy-800 p-8 sm:p-12 text-center backdrop-blur-md shadow-xl">
-          <Sparkles className="h-8 w-8 text-teal-accent mx-auto mb-3" />
+        <div className="mt-16 rounded-lg border border-teal-accent/30 bg-gradient-to-r from-navy-850 to-navy-800 p-8 sm:p-12 text-center backdrop-blur-md shadow-xl">
+          <span className="block h-3 w-3 border-2 border-teal-accent mx-auto mb-4" aria-hidden="true" />
           <h2 className="text-xl sm:text-3xl font-bold text-white tracking-tight">
             Have a question about implementing these architectures?
           </h2>
@@ -185,7 +184,7 @@ export function BlogListingView() {
               href="https://calendly.com/shujaahmed198/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-7 py-3.5 text-sm font-bold text-navy-950 hover:bg-teal-glow shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all min-h-[48px]"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-7 py-3.5 text-sm font-bold text-navy-950 hover:bg-teal-glow transition-all min-h-[48px]"
             >
               <span>Book a free consultation</span>
               <ArrowRight className="h-4 w-4" />

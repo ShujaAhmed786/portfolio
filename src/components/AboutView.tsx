@@ -11,9 +11,7 @@ import {
   ArrowRight,
   Shield,
   Lightbulb,
-  CheckCircle2,
   Quote,
-  Sparkles,
 } from "lucide-react";
 import { AnimatedGridBackground } from "@/components/AnimatedGridBackground";
 
@@ -21,7 +19,7 @@ export function AboutView() {
   return (
     <div className="flex flex-col w-full">
       {/* About Hero */}
-      <AnimatedGridBackground className="py-14 md:py-20" showOrbs={true}>
+      <AnimatedGridBackground className="py-14 md:py-20" showOrbs={false}>
         <div className="mx-auto max-w-5xl px-[clamp(16px,4vw,60px)] text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -29,7 +27,7 @@ export function AboutView() {
             transition={{ duration: 0.5 }}
           >
             <div className="inline-flex items-center gap-2 rounded-full border border-teal-accent/30 bg-teal-accent/10 px-4 py-1.5 text-xs font-mono text-teal-accent mb-6">
-              <Sparkles className="h-3.5 w-3.5" />
+              <span className="h-1.5 w-1.5 bg-teal-accent" aria-hidden="true" />
               The Engineering Journey
             </div>
 
@@ -40,7 +38,7 @@ export function AboutView() {
                 <div className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-teal-accent via-teal-glow to-cyan-400 opacity-60 blur-xl group-hover:opacity-90 transition-opacity duration-500" />
 
                 {/* Circular frame */}
-                <div className="relative h-56 w-56 sm:h-64 sm:w-64 md:h-72 md:w-72 rounded-full overflow-hidden border-2 border-teal-accent shadow-[0_0_35px_rgba(20,184,166,0.35)] bg-navy-950">
+                <div className="relative h-56 w-56 sm:h-64 sm:w-64 md:h-72 md:w-72 rounded-full overflow-hidden border-2 border-teal-accent bg-navy-950">
                   <Image
                     src="/images/profile.png"
                     alt="Shuja Ahmed, DevOps and Cloud Engineer"
@@ -81,7 +79,7 @@ export function AboutView() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="rounded-3xl border border-devops-border bg-navy-850/80 p-6 sm:p-10 backdrop-blur-md"
+            className="rounded-lg border border-devops-border bg-navy-850/80 p-6 sm:p-10 backdrop-blur-md"
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 border border-teal-accent/40 text-teal-accent">
@@ -98,7 +96,7 @@ export function AboutView() {
               <p>
                 Before I wrote a single line of Terraform or orchestrated a Kubernetes cluster, I wrote screenplays, scripts, and analytical technical narratives. In screenwriting, you learn an unforgiving lesson very early:
               </p>
-              <div className="rounded-xl border border-teal-accent/20 bg-navy-900/80 p-4 border-l-4 border-l-teal-accent italic text-slate-200">
+              <div className="rounded-lg border border-teal-accent/20 bg-navy-900/80 p-4 italic text-slate-200">
                 &ldquo;If a scene does not advance the plot or reveal character, it is waste. Cut it.&rdquo;
               </div>
               <p>
@@ -116,7 +114,7 @@ export function AboutView() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="rounded-3xl border border-devops-border bg-navy-850/80 p-6 sm:p-10 backdrop-blur-md"
+            className="rounded-lg border border-devops-border bg-navy-850/80 p-6 sm:p-10 backdrop-blur-md"
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 border border-teal-accent/40 text-teal-accent">
@@ -139,7 +137,7 @@ export function AboutView() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
                 <div className="rounded-xl border border-devops-border bg-navy-900/60 p-4">
                   <div className="flex items-center gap-2 font-mono text-xs text-teal-accent font-bold mb-1">
-                    <CheckCircle2 className="h-4 w-4" />
+                    <span aria-hidden="true" className="font-mono text-sm leading-none text-teal-accent flex-shrink-0 mt-0.5">&gt;</span>
                     <span>Deterministic Flow</span>
                   </div>
                   <p className="text-xs text-slate-300">
@@ -148,7 +146,7 @@ export function AboutView() {
                 </div>
                 <div className="rounded-xl border border-devops-border bg-navy-900/60 p-4">
                   <div className="flex items-center gap-2 font-mono text-xs text-teal-accent font-bold mb-1">
-                    <CheckCircle2 className="h-4 w-4" />
+                    <span aria-hidden="true" className="font-mono text-sm leading-none text-teal-accent flex-shrink-0 mt-0.5">&gt;</span>
                     <span>Ruthless Economy</span>
                   </div>
                   <p className="text-xs text-slate-300">
@@ -168,7 +166,7 @@ export function AboutView() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="rounded-3xl border border-devops-border bg-navy-850/80 p-6 sm:p-10 backdrop-blur-md"
+            className="rounded-lg border border-devops-border bg-navy-850/80 p-6 sm:p-10 backdrop-blur-md"
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 border border-teal-accent/40 text-teal-accent">
@@ -218,7 +216,7 @@ export function AboutView() {
           </motion.div>
 
           {/* Philosophy Callout Quote */}
-          <div className="relative rounded-3xl border border-teal-accent/40 bg-teal-950/20 p-6 sm:p-10 text-center">
+          <div className="relative rounded-lg border border-teal-accent/40 bg-teal-950/20 p-6 sm:p-10 text-center">
             <Quote className="h-8 w-8 text-teal-accent mx-auto mb-3 opacity-60" />
             <p className="text-base sm:text-lg md:text-xl font-medium text-white italic max-w-2xl mx-auto leading-relaxed">
               &ldquo;Great infrastructure, like great writing, is completely invisible when done right. Your developers deploy fearlessly, your servers scale quietly, and your cloud bill never gives your CFO a heart attack.&rdquo;
@@ -239,7 +237,7 @@ export function AboutView() {
                 href="https://calendly.com/shujaahmed198/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-7 py-3.5 text-sm font-bold text-navy-950 hover:bg-teal-glow shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all min-h-[48px]"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-7 py-3.5 text-sm font-bold text-navy-950 hover:bg-teal-glow transition-all min-h-[48px]"
               >
                 <span>Book a free consultation</span>
                 <ArrowRight className="h-4 w-4" />

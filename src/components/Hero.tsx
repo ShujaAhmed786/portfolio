@@ -85,7 +85,7 @@ export function Hero() {
       {/* Live Status Pill in Hero Corner */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-[clamp(16px,4vw,60px)]">
         <div className="flex items-center justify-between">
-          <div className="inline-flex items-center gap-2.5 rounded-full border border-emerald-500/30 bg-navy-950/80 px-4 py-1.5 font-mono text-xs text-emerald-400 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)]">
+          <div className="inline-flex items-center gap-2.5 rounded-full border border-emerald-500/30 bg-navy-950/80 px-4 py-1.5 font-mono text-xs text-emerald-400 backdrop-blur-md">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
@@ -133,7 +133,7 @@ export function Hero() {
             {/* Solid Teal Pill: View Work */}
             <Link
               href="/portfolio"
-              className="group/cta w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full bg-teal-accent px-9 py-4 text-sm sm:text-base font-bold text-navy-950 shadow-[0_0_28px_rgba(20,184,166,0.4)] hover:bg-teal-glow hover:shadow-[0_0_35px_rgba(45,212,191,0.6)] active:scale-95 active:shadow-none transition-all focus-visible:ring-2 focus-visible:ring-white min-h-[48px]"
+              className="group/cta w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full bg-teal-accent px-9 py-4 text-sm sm:text-base font-bold text-navy-950 hover:bg-teal-glow active:scale-95 active:shadow-none transition-all focus-visible:ring-2 focus-visible:ring-white min-h-[48px]"
             >
               <RollText text="View Work" />
               <ArrowRight className="h-4 w-4 group-hover/cta:translate-x-1 transition-transform" />
@@ -154,7 +154,7 @@ export function Hero() {
 
         {/* Live DevOps Deployment Feed Card (Concept: The site 'ships itself') */}
         <Reveal delayMs={900} className="w-full max-w-xl">
-          <div className="rounded-2xl border border-devops-border/80 bg-devops-terminal/90 p-4 sm:p-5 text-left font-mono text-xs shadow-2xl backdrop-blur-md">
+          <div className="rounded-lg border border-devops-border/80 bg-devops-terminal/90 p-4 sm:p-5 text-left font-mono text-xs shadow-2xl backdrop-blur-md">
             <div className="flex items-center justify-between border-b border-devops-border/60 pb-2.5 mb-2.5 gap-2">
               <div className="flex items-center gap-2 min-w-0">
                 <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-red-500/80" />
