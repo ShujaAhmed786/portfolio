@@ -2,9 +2,8 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, ArrowRight, Clock } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { coreServices } from "@/data/services";
-import { RollText } from "./RollText";
 
 export function ServicesAccordion() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
@@ -16,35 +15,35 @@ export function ServicesAccordion() {
 
   return (
     <section
+      id="services"
       aria-label="DevOps and Cloud Engineering Services"
-      className="relative w-full py-20 px-[clamp(16px,4vw,60px)] max-w-7xl mx-auto"
+      className="relative w-full py-16 sm:py-24 px-[clamp(16px,4vw,60px)] max-w-7xl mx-auto"
     >
       {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-6 border-b border-devops-border/70 pb-6">
         <div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-teal-accent/30 bg-teal-accent/10 px-4 py-1.5 font-mono text-xs text-teal-accent mb-4">
-            <span className="h-1.5 w-1.5 bg-teal-accent" aria-hidden="true" />
-            <span>Core Engineering Capabilities</span>
+          <div className="font-mono text-xs uppercase tracking-wider text-teal-accent font-bold mb-2">
+            {"// [04] SERVICES & DELIVERABLES"}
           </div>
           <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             Specialized DevOps Solutions
           </h2>
-          <p className="mt-3 text-slate-300 max-w-xl text-base sm:text-lg">
+          <p className="mt-3 text-slate-300 max-w-xl text-sm sm:text-base leading-relaxed">
             Fixed-scope sprints and turnkey architectural setups engineered for fast delivery and zero downtime.
           </p>
         </div>
 
         <Link
           href="/services"
-          className="group inline-flex items-center gap-2 text-sm font-semibold text-teal-accent hover:text-teal-glow transition-colors self-start md:self-auto min-h-[48px]"
+          className="group inline-flex items-center gap-2 border border-devops-border bg-transparent hover:border-teal-accent hover:bg-navy-850 text-slate-200 hover:text-white px-5 py-2.5 font-mono text-xs font-semibold transition-colors self-start md:self-auto min-h-[44px]"
         >
-          <RollText text="View All Services & Pricing" />
-          <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+          <span>View All Services &amp; Pricing</span>
+          <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform text-teal-accent" />
         </Link>
       </div>
 
-      {/* Accordion List with Hairline Dividers */}
-      <div className="border-t border-devops-border/70 divide-y divide-devops-border/70">
+      {/* Accordion List with Hairline Dividers (Flat: no boxes, no badges, no icons in circles) */}
+      <div className="w-full border-t border-b border-devops-border/70 divide-y divide-devops-border/60">
         {featuredServices.map((service, idx) => {
           const isExpanded = expandedIndex === idx;
           const num = String(idx + 1).padStart(2, "0");
@@ -52,10 +51,8 @@ export function ServicesAccordion() {
           return (
             <div
               key={service.id}
-              className={`group transition-colors duration-300 ${
-                isExpanded
-                  ? "bg-navy-850/60"
-                  : "hover:bg-teal-accent hover:text-navy-950"
+              className={`transition-colors duration-200 ${
+                isExpanded ? "bg-navy-850/40" : "hover:bg-navy-850/30"
               }`}
             >
               {/* Row Header Button */}
@@ -63,107 +60,68 @@ export function ServicesAccordion() {
                 type="button"
                 onClick={() => toggleRow(idx)}
                 aria-expanded={isExpanded}
-                className="w-full py-5 sm:py-8 flex items-center justify-between text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-accent px-3.5 sm:px-6 min-h-[64px] sm:min-h-[72px] active:bg-navy-800/40"
+                className="w-full py-5 sm:py-7 px-2 sm:px-4 flex items-center justify-between text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-accent min-h-[64px]"
               >
-                <div className="flex items-center gap-3 sm:gap-8 flex-1 pr-2 sm:pr-4 min-w-0">
-                  {/* Row Number 01-06 */}
-                  <span
-                    className={`font-mono text-sm sm:text-base font-bold shrink-0 transition-colors ${
-                      isExpanded
-                        ? "text-teal-accent"
-                        : "text-teal-accent/60 group-hover:text-navy-950"
-                    }`}
-                  >
+                {/* Left Side: Number + Title */}
+                <div className="flex items-center gap-4 sm:gap-6 flex-1 pr-3 min-w-0">
+                  <span className="font-mono text-xs sm:text-sm font-bold text-teal-accent shrink-0">
                     {num}
                   </span>
 
-                  {/* Service Title */}
                   <h3
-                    className={`font-display text-base sm:text-2xl md:text-3xl font-bold tracking-tight transition-colors leading-snug ${
-                      isExpanded
-                        ? "text-white"
-                        : "text-slate-100 group-hover:text-navy-950"
+                    className={`font-display text-base sm:text-2xl font-bold tracking-tight transition-colors leading-snug ${
+                      isExpanded ? "text-teal-accent" : "text-white"
                     }`}
                   >
                     {service.name}
                   </h3>
-
-                  {/* Badge */}
-                  {service.badge && (
-                    <span
-                      className={`hidden md:inline-flex items-center rounded-full px-3 py-1 font-mono text-xs font-medium transition-colors ${
-                        isExpanded
-                          ? "border border-teal-accent/30 bg-teal-accent/10 text-teal-accent"
-                          : "border border-devops-border/60 bg-navy-900/60 text-slate-300 group-hover:border-navy-950/30 group-hover:bg-navy-950/10 group-hover:text-navy-950 font-bold"
-                      }`}
-                    >
-                      {service.badge}
-                    </span>
-                  )}
                 </div>
 
-                {/* Right price + Arrow icon */}
-                <div className="flex items-center gap-2.5 sm:gap-4 shrink-0">
-                  <span
-                    className={`font-mono text-xs sm:text-sm font-semibold transition-colors whitespace-nowrap ${
-                      isExpanded
-                        ? "text-teal-accent"
-                        : "text-slate-300 group-hover:text-navy-950 font-bold"
-                    }`}
-                  >
+                {/* Right Side: Price + Plain Arrow (no circle) */}
+                <div className="flex items-center gap-4 shrink-0">
+                  <span className="font-mono text-xs sm:text-sm text-slate-300 font-medium">
                     {service.price}
                   </span>
 
-                  <div
-                    className={`flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full border transition-all duration-300 ${
-                      isExpanded
-                        ? "border-teal-accent bg-teal-accent text-navy-950 rotate-45"
-                        : "border-devops-border text-slate-400 group-hover:border-navy-950 group-hover:text-navy-950 group-hover:rotate-45"
+                  <ArrowUpRight
+                    className={`h-4 w-4 sm:h-5 sm:w-5 text-slate-400 transition-transform duration-200 ${
+                      isExpanded ? "rotate-90 text-teal-accent" : "text-slate-400"
                     }`}
-                  >
-                    <ArrowUpRight className="h-4 w-4 sm:h-5 sm:w-5" />
-                  </div>
+                  />
                 </div>
               </button>
 
               {/* Collapsible Content */}
-              <div
-                className={`grid transition-[grid-template-rows] duration-400 ease-out overflow-hidden px-4 sm:px-6 ${
-                  isExpanded ? "grid-rows-[1fr] pb-8 opacity-100" : "grid-rows-[0fr] opacity-0"
-                }`}
-              >
-                <div className="overflow-hidden">
-                  <div className="pt-2 sm:pl-16 max-w-4xl space-y-4">
-                    <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+              {isExpanded && (
+                <div className="px-2 sm:px-4 pb-6 sm:pb-8 pt-1">
+                  <div className="sm:pl-10 max-w-3xl space-y-4">
+                    <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-sans">
                       {service.description}
                     </p>
 
-                    <div className="flex flex-wrap items-center gap-4 text-xs font-mono pt-2">
-                      <div className="flex items-center gap-1.5 text-teal-accent">
-                        <Clock className="h-3.5 w-3.5" />
-                        <span>Timeline: {service.timeline}</span>
+                    <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-mono text-slate-400 pt-1">
+                      <div>
+                        <span className="text-teal-accent font-semibold">TIMELINE:</span> {service.timeline}
                       </div>
-                      <span className="text-devops-border">•</span>
-                      <div className="flex items-center gap-1.5 text-emerald-400">
-                        <span aria-hidden="true" className="font-mono text-sm leading-none text-teal-accent flex-shrink-0 mt-0.5">&gt;</span>
-                        <span>100% reproducible Infrastructure as Code</span>
+                      <div>
+                        <span className="text-teal-accent font-semibold">INFRASTRUCTURE:</span> 100% reproducible code
                       </div>
                     </div>
 
-                    <div className="pt-4">
+                    <div className="pt-2">
                       <a
                         href="https://calendly.com/shujaahmed198/30min"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group/cta inline-flex items-center gap-2 rounded-xl bg-teal-accent px-5 py-2.5 text-xs font-bold text-navy-950 hover:bg-teal-glow transition-all min-h-[44px]"
+                        className="group inline-flex items-center gap-2 border border-teal-accent/70 bg-transparent hover:border-teal-accent hover:bg-teal-accent/10 px-5 py-2.5 text-xs font-mono font-semibold text-teal-accent transition-colors min-h-[44px]"
                       >
-                        <RollText text="Book Free Strategy Call" />
-                        <ArrowRight className="h-3.5 w-3.5 group-hover/cta:translate-x-1 transition-transform" />
+                        <span>Book Strategy Call</span>
+                        <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform text-teal-accent" />
                       </a>
                     </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           );
         })}

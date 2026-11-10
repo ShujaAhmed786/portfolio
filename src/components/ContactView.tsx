@@ -66,10 +66,10 @@ export function ContactView() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="rounded-lg border border-devops-border bg-navy-850/80 p-6 backdrop-blur-md hover:border-teal-accent/50 transition-colors"
+            className="rounded-lg border border-devops-border bg-navy-850 p-6 hover:border-teal-accent/50 transition-colors"
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 border border-teal-accent/40 text-teal-accent">
+              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-navy-900 border border-teal-accent/40 text-teal-accent">
                 <Mail className="h-5 w-5" />
               </div>
               <div>
@@ -94,11 +94,11 @@ export function ContactView() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="rounded-lg border border-devops-border bg-navy-850/80 p-6 backdrop-blur-md hover:border-teal-accent/50 transition-colors flex flex-col justify-between"
+            className="rounded-lg border border-devops-border bg-navy-850 p-6 hover:border-teal-accent/50 transition-colors flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-3 mb-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 border border-teal-accent/40 text-teal-accent">
+                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-navy-900 border border-teal-accent/40 text-teal-accent">
                   <Linkedin className="h-5 w-5" />
                 </div>
                 <div>
@@ -129,11 +129,11 @@ export function ContactView() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.2 }}
-            className="rounded-lg border border-devops-border bg-navy-850/80 p-6 backdrop-blur-md hover:border-teal-accent/50 transition-colors flex flex-col justify-between"
+            className="rounded-lg border border-devops-border bg-navy-850 p-6 hover:border-teal-accent/50 transition-colors flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-3 mb-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 border border-teal-accent/40 text-teal-accent">
+                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-navy-900 border border-teal-accent/40 text-teal-accent">
                   <Clock className="h-5 w-5" />
                 </div>
                 <div>
@@ -164,7 +164,7 @@ export function ContactView() {
           {/* Agenda & Direct Inquiry Sidebar */}
           <div className="lg:col-span-5 space-y-6">
             {/* Consultation Agenda */}
-            <div className="rounded-lg border border-devops-border bg-navy-850/80 p-6 backdrop-blur-md">
+            <div className="rounded-lg border border-devops-border bg-navy-850 p-6">
               <span className="font-mono text-xs uppercase tracking-wider text-teal-accent font-bold mb-2 block">
                 Session Agenda
               </span>
@@ -208,7 +208,7 @@ export function ContactView() {
             </div>
 
             {/* Direct Message Form Option */}
-            <div className="rounded-lg border border-devops-border bg-navy-850/80 p-6 backdrop-blur-md">
+            <div className="rounded-lg border border-devops-border bg-navy-850 p-6">
               <div className="flex items-center gap-2 mb-3">
                 <MessageSquare className="h-5 w-5 text-teal-accent" />
                 <h3 className="text-lg font-bold text-white">Prefer to message first?</h3>
@@ -330,7 +330,7 @@ export function ContactView() {
 
                   <button
                     type="submit"
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent py-3.5 text-xs font-bold text-navy-950 hover:bg-teal-glow transition-all min-h-[48px]"
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-lg border border-teal-accent/80 bg-transparent hover:bg-teal-accent/10 py-3.5 text-xs font-mono font-bold text-teal-accent transition-all min-h-[48px]"
                   >
                     <Send className="h-3.5 w-3.5" />
                     <span>Send Message Directly</span>

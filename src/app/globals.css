@@ -6,7 +6,6 @@
   --background: #0A1628;
   --foreground: #F8FAFC;
   --teal-accent: #14B8A6;
-  --teal-glow: #2DD4BF;
   --navy-dark: #060D18;
   --navy-surface: #0E1E36;
   --navy-card: #132744;
@@ -98,74 +97,33 @@ body {
   border-radius: 4px;
 }
 
-/* Subtle glow utilities */
-.teal-glow {
-  box-shadow: 0 0 25px -5px rgba(20, 184, 166, 0.35);
-}
-
-.teal-glow-sm {
-  box-shadow: 0 0 15px -3px rgba(20, 184, 166, 0.25);
-}
-
-.teal-text-glow {
-  text-shadow: 0 0 18px rgba(20, 184, 166, 0.5);
-}
-
-.card-border-glow {
+/* Ruled Card Border Utility */
+.card-border-ruled {
   position: relative;
   border: 1px solid rgba(30, 58, 95, 0.8);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: border-color 0.2s ease;
 }
 
-.card-border-glow:hover {
-  border-color: rgba(20, 184, 166, 0.5);
-  box-shadow: 0 10px 30px -10px rgba(20, 184, 166, 0.2);
+.card-border-ruled:hover {
+  border-color: rgba(20, 184, 166, 0.6);
 }
 
-/* Animated Grid Background */
-.bg-grid-tech {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(30, 58, 95, 0.25) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(30, 58, 95, 0.25) 1px, transparent 1px);
-}
-
-
-/* Reveal Primitives (Bottom-to-Top Clip-Path Wipe) */
-.reveal-clip {
-  clip-path: inset(100% 0% 0% 0%);
+/* Reveal Primitives (Fast Fade and Subtle Rise) */
+.reveal-clip,
+.reveal-clip-scale {
   opacity: 0.001;
-  transform: translate3d(0, 16px, 0);
+  transform: translate3d(0, 10px, 0);
   transition:
-    clip-path var(--duration-reveal, 900ms) var(--ease-out-expo),
-    transform var(--duration-reveal, 900ms) var(--ease-out-expo),
-    opacity 350ms ease-out;
+    opacity 280ms ease-out,
+    transform 280ms ease-out;
   transition-delay: var(--reveal-delay, 0ms);
-  will-change: clip-path, transform, opacity;
+  will-change: opacity, transform;
 }
 
-.reveal-clip.is-revealed {
-  clip-path: inset(0% 0% 0% 0%);
+.reveal-clip.is-revealed,
+.reveal-clip-scale.is-revealed {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-}
-
-.reveal-clip-scale {
-  clip-path: inset(100% 0% 0% 0%);
-  opacity: 0.001;
-  transform: scale(1.08) translate3d(0, 12px, 0);
-  transition:
-    clip-path var(--duration-reveal, 900ms) var(--ease-out-expo),
-    transform var(--duration-reveal, 900ms) var(--ease-out-expo),
-    opacity 350ms ease-out;
-  transition-delay: var(--reveal-delay, 0ms);
-  will-change: clip-path, transform, opacity;
-}
-
-.reveal-clip-scale.is-revealed {
-  clip-path: inset(0% 0% 0% 0%);
-  opacity: 1;
-  transform: scale(1) translate3d(0, 0, 0);
 }
 
 /* Reduced Motion Safety */
@@ -181,7 +139,6 @@ body {
 
   .reveal-clip,
   .reveal-clip-scale {
-    clip-path: inset(0% 0% 0% 0%) !important;
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
@@ -192,39 +149,12 @@ body {
     transform: none !important;
     transition: none !important;
   }
-
-  .animate-marquee-track {
-    animation: none !important;
-    transform: none !important;
-  }
-}
-
-/* Infinite Marquee Divider */
-@keyframes marquee-slide {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-50%, 0, 0);
-  }
-}
-
-.animate-marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee-slide 28s linear infinite;
-  will-change: transform;
-}
-
-.animate-marquee-track:hover {
-  animation-play-state: paused;
 }
 
 /* Touch device optimization: prevent sticky hover states and ensure instant reveals on touch */
 @media (hover: none) and (pointer: coarse) {
   .reveal-clip,
   .reveal-clip-scale {
-    clip-path: inset(0% 0% 0% 0%) !important;
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;

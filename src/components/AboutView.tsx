@@ -47,7 +47,7 @@ export function AboutView() {
                 </div>
 
                 {/* Live Status Pill */}
-                <div className="absolute bottom-2 right-2 flex items-center gap-1.5 rounded-full bg-navy-950/95 border border-teal-accent/60 px-3 py-1 shadow-lg backdrop-blur-md text-[11px] font-mono text-teal-accent">
+                <div className="absolute bottom-2 right-2 flex items-center gap-1.5 rounded-lg bg-navy-950 border border-teal-accent/60 px-3 py-1 text-[11px] font-mono text-teal-accent">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -76,10 +76,10 @@ export function AboutView() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="rounded-lg border border-devops-border bg-navy-850/80 p-6 sm:p-10 backdrop-blur-md"
+            className="rounded-lg border border-devops-border bg-navy-850 p-6 sm:p-10"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 border border-teal-accent/40 text-teal-accent">
+              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-navy-900 border border-teal-accent/40 text-teal-accent">
                 <FileText className="h-5 w-5" />
               </div>
               <div>
@@ -111,10 +111,10 @@ export function AboutView() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="rounded-lg border border-devops-border bg-navy-850/80 p-6 sm:p-10 backdrop-blur-md"
+            className="rounded-lg border border-devops-border bg-navy-850 p-6 sm:p-10"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 border border-teal-accent/40 text-teal-accent">
+              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-navy-900 border border-teal-accent/40 text-teal-accent">
                 <Terminal className="h-5 w-5" />
               </div>
               <div>
@@ -132,7 +132,7 @@ export function AboutView() {
                 I realized that writing a shell script, a Dockerfile, or a GitHub Actions pipeline required the exact same discipline as drafting a screenplay:
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
-                <div className="rounded-xl border border-devops-border bg-navy-900/60 p-4">
+                <div className="rounded-lg border border-devops-border bg-navy-900/60 p-4">
                   <div className="flex items-center gap-2 font-mono text-xs text-teal-accent font-bold mb-1">
                     <span aria-hidden="true" className="font-mono text-sm leading-none text-teal-accent flex-shrink-0 mt-0.5">&gt;</span>
                     <span>Deterministic Flow</span>
@@ -141,7 +141,7 @@ export function AboutView() {
                     A pipeline step must either succeed cleanly or fail immediately with an informative error trace. No ambiguous states.
                   </p>
                 </div>
-                <div className="rounded-xl border border-devops-border bg-navy-900/60 p-4">
+                <div className="rounded-lg border border-devops-border bg-navy-900/60 p-4">
                   <div className="flex items-center gap-2 font-mono text-xs text-teal-accent font-bold mb-1">
                     <span aria-hidden="true" className="font-mono text-sm leading-none text-teal-accent flex-shrink-0 mt-0.5">&gt;</span>
                     <span>Ruthless Economy</span>
@@ -163,10 +163,10 @@ export function AboutView() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="rounded-lg border border-devops-border bg-navy-850/80 p-6 sm:p-10 backdrop-blur-md"
+            className="rounded-lg border border-devops-border bg-navy-850 p-6 sm:p-10"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 border border-teal-accent/40 text-teal-accent">
+              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-navy-900 border border-teal-accent/40 text-teal-accent">
                 <Cpu className="h-5 w-5" />
               </div>
               <div>
@@ -234,14 +234,14 @@ export function AboutView() {
                 href="https://calendly.com/shujaahmed198/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-7 py-3.5 text-sm font-bold text-navy-950 hover:bg-teal-glow transition-all min-h-[48px]"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-teal-accent/80 bg-transparent hover:bg-teal-accent/10 px-7 py-3.5 text-sm font-mono font-bold text-teal-accent transition-all min-h-[48px]"
               >
                 <span>Book a free consultation</span>
                 <ArrowRight className="h-4 w-4" />
               </a>
               <Link
                 href="/portfolio"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-devops-border bg-navy-850 px-6 py-3.5 text-sm font-semibold text-slate-200 hover:border-teal-accent/50 transition-colors min-h-[48px]"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-devops-border bg-navy-850 px-6 py-3.5 text-sm font-mono font-semibold text-slate-200 hover:border-teal-accent/50 transition-colors min-h-[48px]"
               >
                 <span>Explore Case Studies</span>
               </Link>

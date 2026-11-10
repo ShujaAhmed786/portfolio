@@ -27,7 +27,7 @@ export function CalendlyEmbed({
   return (
     <div
       id="booking"
-      className="w-full rounded-lg border border-devops-border bg-navy-850/80 p-4 sm:p-6 shadow-2xl backdrop-blur-sm"
+      className="w-full rounded-lg border border-devops-border bg-navy-850 p-4 sm:p-6"
     >
       {/* Session briefing header */}
       <div className="mb-6 border-b border-devops-border/60 pb-5">

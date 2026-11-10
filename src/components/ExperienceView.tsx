@@ -119,7 +119,7 @@ export function ExperienceView() {
                 </div>
 
                 {/* Card Container */}
-                <div className="rounded-lg border border-devops-border bg-navy-850/80 p-6 sm:p-8 backdrop-blur-md hover:border-teal-accent/50 transition-colors">
+                <div className="rounded-lg border border-devops-border bg-navy-850 p-6 sm:p-8 hover:border-teal-accent/50 transition-colors">
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                     <h3 className="text-xl sm:text-2xl font-bold text-white">
                       {item.role}
@@ -179,11 +179,11 @@ export function ExperienceView() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: idx * 0.08 }}
-                  className="rounded-lg border border-devops-border bg-navy-850/80 p-6 sm:p-7 backdrop-blur-md flex flex-col justify-between"
+                  className="rounded-lg border border-devops-border bg-navy-850 p-6 sm:p-7 flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center gap-3 mb-5">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 border border-teal-accent/40 text-teal-accent">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-navy-900 border border-teal-accent/40 text-teal-accent">
                         <CategoryIcon className="h-5 w-5" />
                       </div>
                       <div>
@@ -228,7 +228,7 @@ export function ExperienceView() {
 
       {/* Experience Footer CTA */}
       <section className="relative py-14 px-[clamp(16px,4vw,60px)] max-w-5xl mx-auto w-full text-center">
-        <div className="rounded-lg border border-teal-accent/30 bg-gradient-to-r from-navy-850 to-navy-800 p-8 sm:p-12 shadow-xl">
+        <div className="rounded-lg border border-devops-border bg-navy-850 p-8 sm:p-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
             Put 4+ years of specialized freelance DevOps experience to work
           </h2>
@@ -240,7 +240,7 @@ export function ExperienceView() {
               href="https://calendly.com/shujaahmed198/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-7 py-3.5 text-sm font-bold text-navy-950 hover:bg-teal-glow transition-all min-h-[48px]"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-teal-accent/80 bg-transparent hover:bg-teal-accent/10 px-7 py-3.5 text-sm font-mono font-bold text-teal-accent transition-all min-h-[48px]"
             >
               <span>Book a free consultation</span>
               <ArrowRight className="h-4 w-4" />

@@ -17,9 +17,7 @@ export function ProjectCard({ project, featured = false, counter }: ProjectCardP
   return (
     <TiltCard className="h-full">
       <div
-        data-cursor="VIEW"
-        data-cursor-type="project"
-        className="group relative flex h-full flex-col justify-between overflow-hidden rounded-lg border border-devops-border bg-navy-850/90 p-6 md:p-8 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-teal-accent/50 active:scale-[0.985] active:border-teal-accent/50"
+        className="group relative flex h-full flex-col justify-between overflow-hidden rounded-lg border border-devops-border bg-navy-850 p-6 md:p-8 transition-colors duration-200 hover:border-teal-accent/50"
       >
         {/* Top bar with counter, badge and links */}
         <div>
@@ -76,7 +74,7 @@ export function ProjectCard({ project, featured = false, counter }: ProjectCardP
           </div>
 
           {/* Metrics Row */}
-          <div className="mt-6 grid grid-cols-3 gap-2 rounded-xl border border-devops-border/60 bg-navy-900/60 p-3 text-center">
+          <div className="mt-6 grid grid-cols-3 gap-2 rounded-lg border border-devops-border/60 bg-navy-900/60 p-3 text-center">
             {project.metrics.map((metric, idx) => (
               <div key={idx} className="flex flex-col">
                 <span className="font-mono text-base md:text-lg font-bold text-teal-accent">
@@ -91,7 +89,7 @@ export function ProjectCard({ project, featured = false, counter }: ProjectCardP
 
           {/* Problem & Solution Accordion-like blocks */}
           <div className="mt-6 space-y-4 text-sm leading-relaxed">
-            <div className="rounded-xl border border-red-500/20 bg-red-950/10 p-4">
+            <div className="rounded-lg border border-red-500/20 bg-red-950/10 p-4">
               <div className="flex items-center gap-2 font-mono text-xs font-bold text-red-400 mb-1.5 uppercase tracking-wider">
                 <AlertTriangle className="h-3.5 w-3.5 text-red-400" />
                 <span>The Challenge</span>
@@ -101,7 +99,7 @@ export function ProjectCard({ project, featured = false, counter }: ProjectCardP
               </p>
             </div>
 
-            <div className="rounded-xl border border-teal-accent/20 bg-teal-950/15 p-4">
+            <div className="rounded-lg border border-teal-accent/20 bg-teal-950/15 p-4">
               <div className="flex items-center gap-2 font-mono text-xs font-bold text-teal-accent mb-1.5 uppercase tracking-wider">
                 <Lightbulb className="h-3.5 w-3.5 text-teal-accent" />
                 <span>DevOps Solution</span>

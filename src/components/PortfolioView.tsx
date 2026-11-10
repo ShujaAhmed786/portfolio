@@ -53,19 +53,19 @@ export function PortfolioView() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3.5 max-w-4xl mx-auto"
           >
-            <div className="rounded-xl border border-devops-border bg-navy-850/80 p-3 sm:p-4 text-center backdrop-blur-sm">
+            <div className="rounded-lg border border-devops-border bg-navy-850 p-3 sm:p-4 text-center">
               <span className="block font-mono text-lg sm:text-2xl font-bold text-teal-accent">99.98%</span>
               <span className="text-[11px] sm:text-xs text-slate-400 mt-1 block">Production System SLA</span>
             </div>
-            <div className="rounded-xl border border-devops-border bg-navy-850/80 p-3 sm:p-4 text-center backdrop-blur-sm">
+            <div className="rounded-lg border border-devops-border bg-navy-850 p-3 sm:p-4 text-center">
               <span className="block font-mono text-lg sm:text-2xl font-bold text-teal-accent">Multi-AZ</span>
               <span className="text-[11px] sm:text-xs text-slate-400 mt-1 block">ECS & RDS Availability</span>
             </div>
-            <div className="rounded-xl border border-devops-border bg-navy-850/80 p-3 sm:p-4 text-center backdrop-blur-sm">
+            <div className="rounded-lg border border-devops-border bg-navy-850 p-3 sm:p-4 text-center">
               <span className="block font-mono text-lg sm:text-2xl font-bold text-teal-accent">$0.64 / day</span>
               <span className="text-[11px] sm:text-xs text-slate-400 mt-1 block">RateStack Daily AWS Cost</span>
             </div>
-            <div className="rounded-xl border border-devops-border bg-navy-850/80 p-3 sm:p-4 text-center backdrop-blur-sm">
+            <div className="rounded-lg border border-devops-border bg-navy-850 p-3 sm:p-4 text-center">
               <span className="block font-mono text-lg sm:text-2xl font-bold text-teal-accent">-78%</span>
               <span className="text-[11px] sm:text-xs text-slate-400 mt-1 block">FitLyfe Ingestion Latency</span>
             </div>
@@ -107,7 +107,7 @@ export function PortfolioView() {
 
       {/* Architecture Deep-Dive Callout */}
       <section className="relative py-12 px-[clamp(16px,4vw,60px)] max-w-7xl mx-auto w-full">
-        <div className="rounded-lg border border-devops-border bg-navy-850/70 p-6 sm:p-10 md:p-12 backdrop-blur-md">
+        <div className="rounded-lg border border-devops-border bg-navy-850 p-6 sm:p-10 md:p-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8">
               <div className="inline-flex items-center gap-2 rounded-full border border-teal-accent/30 bg-teal-accent/10 px-3 py-1 text-xs font-mono text-teal-accent mb-3">
@@ -125,14 +125,14 @@ export function PortfolioView() {
                   href="https://calendly.com/shujaahmed198/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group/cta inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-5 py-3 text-xs font-bold text-navy-950 hover:bg-teal-glow transition-all min-h-[48px]"
+                  className="group/cta inline-flex items-center justify-center gap-2 rounded-lg border border-teal-accent/70 bg-transparent hover:border-teal-accent hover:bg-teal-accent/10 px-5 py-3 text-xs font-mono font-bold text-teal-accent transition-all min-h-[48px]"
                 >
                   <RollText text="Discuss Your Project Architecture" />
                   <ArrowRight className="h-3.5 w-3.5 group-hover/cta:translate-x-1 transition-transform" />
                 </a>
                 <Link
                   href="/services"
-                  className="group/srv inline-flex items-center justify-center gap-2 rounded-xl border border-devops-border bg-navy-900 px-5 py-3 text-xs font-semibold text-slate-200 hover:border-teal-accent/50 transition-colors min-h-[48px]"
+                  className="group/srv inline-flex items-center justify-center gap-2 rounded-lg border border-devops-border bg-navy-900 px-5 py-3 text-xs font-mono font-semibold text-slate-200 hover:border-teal-accent/50 transition-colors min-h-[48px]"
                 >
                   <RollText text="Explore Engineering Services" />
                 </Link>
@@ -166,7 +166,7 @@ export function PortfolioView() {
             href="https://calendly.com/shujaahmed198/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="group/btn inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-7 py-3.5 text-sm font-bold text-navy-950 hover:bg-teal-glow transition-all min-h-[48px]"
+            className="group/btn inline-flex items-center justify-center gap-2 rounded-lg border border-teal-accent/80 bg-transparent hover:border-teal-accent hover:bg-teal-accent/10 px-7 py-3.5 text-sm font-mono font-bold text-teal-accent transition-all min-h-[48px]"
           >
             <RollText text="Book a free consultation" />
             <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />

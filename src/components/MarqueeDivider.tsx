@@ -35,7 +35,7 @@ export function MarqueeDivider() {
   return (
     <section
       aria-label="Core Technical Competencies Ticker"
-      className="relative w-full overflow-hidden border-y border-devops-border/50 bg-navy-950/80 py-6 sm:py-8 backdrop-blur-md"
+      className="relative w-full overflow-hidden border-y border-devops-border/50 bg-navy-950 py-6 sm:py-8"
     >
       {/* Edge gradient masks to fade the text in and out smoothly */}
       <div

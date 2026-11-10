@@ -62,7 +62,7 @@ export function BlogListingView() {
                 placeholder="Search articles by topic, tool, or keyword..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full rounded-lg border border-devops-border bg-navy-850/90 py-3.5 pl-11 pr-4 text-sm text-white placeholder-slate-400 backdrop-blur-md focus:border-teal-accent focus:outline-none min-h-[48px]"
+                className="w-full rounded-lg border border-devops-border bg-navy-850 py-3.5 pl-11 pr-4 text-sm text-white placeholder-slate-400 focus:border-teal-accent focus:outline-none min-h-[48px]"
               />
             </div>
           </motion.div>
@@ -100,7 +100,7 @@ export function BlogListingView() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: idx * 0.05 }}
-                className="group relative flex flex-col justify-between rounded-lg border border-devops-border bg-navy-850/80 p-6 sm:p-8 backdrop-blur-md hover:border-teal-accent/50 active:scale-[0.985] active:border-teal-accent/50 transition-all duration-300"
+                className="group relative flex flex-col justify-between rounded-lg border border-devops-border bg-navy-850 p-6 sm:p-8 hover:border-teal-accent/50 active:scale-[0.985] active:border-teal-accent/50 transition-all duration-300"
                 data-cursor="READ"
                 data-cursor-type="blog"
               >
@@ -144,7 +144,7 @@ export function BlogListingView() {
                     ))}
                   </div>
 
-                  <span className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-teal-accent group-hover:text-teal-glow transition-colors whitespace-nowrap min-h-[48px] items-center">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-teal-accent group-hover:text-white transition-colors whitespace-nowrap min-h-[48px] items-center">
                     <RollText text="Read Guide" />
                     <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
                   </span>
@@ -171,7 +171,7 @@ export function BlogListingView() {
         )}
 
         {/* Blog Consultation Banner */}
-        <div className="mt-16 rounded-lg border border-teal-accent/30 bg-gradient-to-r from-navy-850 to-navy-800 p-8 sm:p-12 text-center backdrop-blur-md shadow-xl">
+        <div className="mt-16 rounded-lg border border-devops-border bg-navy-850 p-8 sm:p-12 text-center">
           <span className="block h-3 w-3 border-2 border-teal-accent mx-auto mb-4" aria-hidden="true" />
           <h2 className="text-xl sm:text-3xl font-bold text-white tracking-tight">
             Have a question about implementing these architectures?
@@ -184,7 +184,7 @@ export function BlogListingView() {
               href="https://calendly.com/shujaahmed198/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-7 py-3.5 text-sm font-bold text-navy-950 hover:bg-teal-glow transition-all min-h-[48px]"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-teal-accent/80 bg-transparent hover:bg-teal-accent/10 px-7 py-3.5 text-sm font-mono font-bold text-teal-accent transition-all min-h-[48px]"
             >
               <span>Book a free consultation</span>
               <ArrowRight className="h-4 w-4" />

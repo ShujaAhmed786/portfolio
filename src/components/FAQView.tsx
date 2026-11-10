@@ -72,7 +72,7 @@ export function FAQView() {
             placeholder="Search questions by keyword (e.g. AWS, NDA, timeline, pricing)..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full rounded-lg border border-devops-border bg-navy-850/90 py-3.5 pl-11 pr-4 text-sm text-white placeholder-slate-400 backdrop-blur-md focus:border-teal-accent focus:outline-none min-h-[48px]"
+            className="w-full rounded-lg border border-devops-border bg-navy-850 py-3.5 pl-11 pr-4 text-sm text-white placeholder-slate-400 focus:border-teal-accent focus:outline-none min-h-[48px]"
           />
         </div>
 
@@ -118,7 +118,7 @@ export function FAQView() {
         )}
 
         {/* Still have questions card */}
-        <div className="mt-16 rounded-lg border border-devops-border bg-navy-850/90 p-8 sm:p-10 backdrop-blur-md text-center">
+        <div className="mt-16 rounded-lg border border-devops-border bg-navy-850 p-8 sm:p-10 text-center">
           <MessageSquare className="h-8 w-8 text-teal-accent mx-auto mb-3" />
           <h2 className="text-xl sm:text-2xl font-bold text-white">Have a specific or custom question?</h2>
           <p className="mt-2 text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
@@ -130,7 +130,7 @@ export function FAQView() {
               href="https://calendly.com/shujaahmed198/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-6 py-3.5 text-sm font-bold text-navy-950 hover:bg-teal-glow transition-all min-h-[48px]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg border border-teal-accent/80 bg-transparent hover:bg-teal-accent/10 px-6 py-3.5 text-sm font-mono font-bold text-teal-accent transition-all min-h-[48px]"
             >
               <span>Book a free consultation</span>
               <ArrowRight className="h-4 w-4" />

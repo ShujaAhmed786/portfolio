@@ -1,91 +1,40 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import { Terminal } from "lucide-react";
-
-const WORDS = [
-  { text: "I", highlight: false },
-  { text: "keep", highlight: false },
-  { text: "deploys", highlight: false },
-  { text: "boring", highlight: true },
-  { text: "and", highlight: false },
-  { text: "bills", highlight: false },
-  { text: "small.", highlight: true },
-];
+import React from "react";
 
 export function ManifestoSection() {
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [isReducedMotion, setIsReducedMotion] = useState(false);
-
-  useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion) {
-      setIsReducedMotion(true);
-      setScrollProgress(1);
-      return;
-    }
-
-    const handleScroll = () => {
-      const el = sectionRef.current;
-      if (!el) return;
-
-      const rect = el.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      // Illumination starts when section top is at 80% of viewport, finishes near 25%
-      const start = windowHeight * 0.8;
-      const end = windowHeight * 0.25;
-
-      const progress = Math.min(1, Math.max(0, (start - rect.top) / (start - end)));
-      setScrollProgress(progress);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <section
-      ref={sectionRef}
       aria-label="Engineering Manifesto"
-      className="relative w-full py-28 sm:py-36 px-[clamp(16px,4vw,60px)] max-w-6xl mx-auto text-center overflow-hidden"
+      className="relative w-full py-16 sm:py-24 px-[clamp(16px,4vw,60px)] max-w-7xl mx-auto"
     >
-      {/* Decorative Mono Kicker */}
-      <div className="inline-flex items-center gap-2 rounded-full border border-teal-accent/30 bg-teal-accent/10 px-4 py-1.5 font-mono text-xs text-teal-accent mb-8">
-        <Terminal className="h-3.5 w-3.5" />
-        <span>cat ~/manifesto.txt</span>
+      <div className="border-t border-b border-devops-border/70 py-12 sm:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+          {/* Left Rule Column: Mono Section Label */}
+          <div className="md:col-span-3 border-l-2 md:border-l-0 md:border-r border-devops-border/70 pl-4 md:pl-0 md:pr-8 font-mono space-y-2">
+            <div className="text-xs uppercase tracking-widest text-teal-accent font-bold">
+              {"// [03] MANIFESTO"}
+            </div>
+            <div className="text-xs text-slate-400">
+              cat ~/manifesto.txt
+            </div>
+            <div className="text-[11px] text-slate-400 uppercase tracking-wider pt-4 hidden md:block">
+              ENGINEERING DIRECTIVE: RELIABILITY OVER COMPLEXITY
+            </div>
+          </div>
+
+          {/* Right Column: Large Editorial Text */}
+          <div className="md:col-span-9">
+            <h2 className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.08]">
+              I keep deploys <span className="text-teal-accent">boring</span> and bills <span className="text-teal-accent">small.</span>
+            </h2>
+
+            <p className="mt-6 sm:mt-8 text-base sm:text-xl text-slate-300 font-sans leading-relaxed max-w-3xl">
+              Deterministic infrastructure as code, automated rollouts with zero downtime, and cloud bills that never give your CFO a surprise.
+            </p>
+          </div>
+        </div>
       </div>
-
-      {/* Main Manifesto Headline with Word-by-Word Scroll Illumination */}
-      <h2 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[1.08] select-none">
-        {WORDS.map((word, index) => {
-          const wordThreshold = (index + 0.3) / WORDS.length;
-          const isIlluminated = isReducedMotion || scrollProgress >= wordThreshold;
-
-          return (
-            <span
-              key={index}
-              className={`inline-block mr-[0.3em] transition-all duration-500 ease-out ${
-                isIlluminated
-                  ? word.highlight
-                    ? "text-teal-accent drop- scale-100"
-                    : "text-white scale-100"
-                  : "text-slate-700/60 scale-[0.98]"
-              }`}
-            >
-              {word.text}
-            </span>
-          );
-        })}
-      </h2>
-
-      {/* Supporting Subtext */}
-      <p className="mt-8 text-base sm:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed font-sans">
-        Deterministic infrastructure as code, automated rollouts with zero downtime, and cloud bills that never give your CFO a surprise.
-      </p>
     </section>
   );
 }

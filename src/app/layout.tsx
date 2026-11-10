@@ -1,15 +1,20 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, JetBrains_Mono, Public_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { CustomCursor } from "@/components/CustomCursor";
-import { Preloader } from "@/components/Preloader";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 import { PageTransitionOverlay } from "@/components/PageTransitionOverlay";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Analytics } from "@/components/Analytics";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#0A1628",
+};
 
 const publicSans = Public_Sans({
   subsets: ["latin"],
@@ -117,10 +122,8 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-navy-900 text-slate-100 min-h-dvh flex flex-col font-sans antialiased selection:bg-teal-accent selection:text-navy-950 overflow-x-hidden text-[16px]">
-        <Preloader />
         <ScrollProgressBar />
         <PageTransitionOverlay />
-        <CustomCursor />
         <SmoothScroll>
           <Navbar />
           <main className="flex-grow pt-20">{children}</main>

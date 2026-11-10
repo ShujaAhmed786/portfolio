@@ -2,7 +2,6 @@
 
 import React from "react";
 import { Hero } from "@/components/Hero";
-import { MarqueeDivider } from "@/components/MarqueeDivider";
 import { StatsSection } from "@/components/StatsSection";
 import { SelectedWorkSection } from "@/components/SelectedWorkSection";
 import { ManifestoSection } from "@/components/ManifestoSection";
@@ -14,31 +13,28 @@ import { CtaPanel } from "@/components/CtaPanel";
 export function HomeView() {
   return (
     <div className="flex flex-col w-full">
-      {/* 1. Full-Viewport Deployment Hero */}
+      {/* 1. Typographic Ops Hero with Full-Width Ruled Deploy-Log Strip */}
       <Hero />
 
-      {/* 2. Marquee Divider below the hero */}
-      <MarqueeDivider />
-
-      {/* 3. Stats Band: Real Verified Metrics with Animated rAF Count-Up */}
+      {/* 2. System Performance Benchmarks Ruled Table */}
       <StatsSection />
 
-      {/* 4. Selected Work Cards: 24px Radius, Clip-Path Wipe & Counter */}
+      {/* 3. Selected Work: Numbered Index 01-04 */}
       <SelectedWorkSection />
 
-      {/* 5. Manifesto: Word-by-Word Scroll Illumination */}
+      {/* 4. Manifesto: Editorial Text with Left Rule Column */}
       <ManifestoSection />
 
-      {/* 6. Services Accordion: Numbered Rows 01-06 with Hairline Dividers & Teal Hover */}
+      {/* 5. Services Accordion: Flat Hairline Rows */}
       <ServicesAccordion />
 
-      {/* 7. Experience Timeline: Pinned Left Rail & Scrolling Role Cards */}
+      {/* 6. Experience: Ledger Style */}
       <ExperienceTimelineSection />
 
-      {/* 8. Blog Teaser: 3 Cards with READ Cursor Morph */}
+      {/* 7. Blog Teaser: Numbered Rows */}
       <BlogTeaserSection />
 
-      {/* 9. CTA Panel: Big Rounded Teal Panel */}
+      {/* 8. CTA: Ruled Section */}
       <CtaPanel />
     </div>
   );

@@ -57,17 +57,17 @@ export function Footer() {
 
           <div className="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
             {/* Live Karachi World-Clock Ticker */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-devops-border/80 bg-navy-900/90 px-4 py-2 font-mono text-xs text-teal-accent backdrop-blur-md">
-              <Clock className="h-3.5 w-3.5 animate-pulse text-teal-accent" />
+            <div className="inline-flex items-center gap-2 rounded-lg border border-devops-border bg-navy-900 px-3.5 py-1.5 font-mono text-xs text-teal-accent">
+              <Clock className="h-3.5 w-3.5 text-teal-accent" />
               <span className="tracking-widest">{karachiTime}</span>
             </div>
 
-            {/* Circular Back-to-Top Button */}
+            {/* Back-to-Top Button */}
             <button
               type="button"
               onClick={scrollToTop}
               aria-label="Scroll back to top"
-              className="group flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-devops-border bg-navy-900 text-slate-300 hover:border-teal-accent hover:bg-teal-accent hover:text-navy-950 active:scale-95 transition-all shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-accent"
+              className="group flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-devops-border bg-navy-900 text-slate-300 hover:border-teal-accent hover:text-teal-accent active:scale-95 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-accent"
             >
               <ArrowUp className="h-4 w-4 group-hover:-translate-y-0.5 transition-transform" />
             </button>

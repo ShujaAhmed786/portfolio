@@ -26,7 +26,7 @@ export function BlogPostContent({ content }: BlogPostContentProps) {
             {...(isExternal
               ? { target: "_blank", rel: "noopener noreferrer" }
               : {})}
-            className="text-teal-accent hover:text-teal-glow underline decoration-teal-accent/40 underline-offset-2 transition-colors"
+            className="text-teal-accent hover:text-white underline decoration-teal-accent/40 underline-offset-2 transition-colors"
           >
             {label}
           </a>

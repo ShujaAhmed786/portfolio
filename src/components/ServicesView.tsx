@@ -71,16 +71,16 @@ function ServiceCard({ service, index }: { service: ServiceOffer; index: number 
       viewport={{ once: true }}
       transition={{ duration: 0.45, delay: index * 0.05 }}
       whileHover={{ y: -4 }}
-      className={`group relative flex flex-col justify-between rounded-lg border p-6 sm:p-7 backdrop-blur-md transition-all duration-300 ${
+      className={`group relative flex flex-col justify-between rounded-lg border p-6 sm:p-7 transition-all duration-300 ${
         service.highlighted
-          ? "border-teal-accent/60 bg-navy-850/95"
-          : "border-devops-border bg-navy-850/80 hover:border-teal-accent/50"
+          ? "border-teal-accent/60 bg-navy-850"
+          : "border-devops-border bg-navy-850 hover:border-teal-accent/50"
       }`}
     >
       <div>
         {/* Top Badges & Icon */}
         <div className="flex items-center justify-between gap-3 mb-4">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 border border-teal-accent/40 text-teal-accent group-hover:scale-105 transition-transform">
+          <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-navy-900 border border-teal-accent/40 text-teal-accent transition-transform">
             <IconComponent className="h-5 w-5" />
           </div>
 
@@ -132,7 +132,7 @@ function ServiceCard({ service, index }: { service: ServiceOffer; index: number 
           href="https://calendly.com/shujaahmed198/30min"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex w-full items-center justify-center gap-2 rounded-xl bg-teal-accent px-4 py-3 text-xs sm:text-sm font-bold text-navy-950 hover:bg-teal-glow active:scale-95 transition-all focus-visible:ring-2 focus-visible:ring-white min-h-[48px]"
+          className="flex w-full items-center justify-center gap-2 rounded-lg border border-teal-accent/80 bg-transparent hover:bg-teal-accent/10 px-4 py-3 text-xs sm:text-sm font-mono font-bold text-teal-accent active:scale-95 transition-all focus-visible:ring-2 focus-visible:ring-white min-h-[48px]"
         >
           <span>Book free consultation</span>
           <ArrowRight className="h-3.5 w-3.5" />
@@ -199,7 +199,7 @@ export function ServicesView() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="mt-10 rounded-lg border border-teal-accent/30 bg-gradient-to-r from-navy-850 via-navy-800 to-navy-850 p-6 sm:p-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl"
+            className="mt-10 rounded-lg border border-devops-border bg-navy-850 p-6 sm:p-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6"
           >
             <div>
               <span className="font-mono text-xs uppercase tracking-wider text-teal-accent font-semibold">
@@ -216,7 +216,7 @@ export function ServicesView() {
               href="https://calendly.com/shujaahmed198/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-6 py-3.5 text-xs sm:text-sm font-bold text-navy-950 hover:bg-teal-glow transition-all whitespace-nowrap flex-shrink-0 min-h-[48px]"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-teal-accent/80 bg-transparent hover:bg-teal-accent/10 px-6 py-3.5 text-xs sm:text-sm font-mono font-bold text-teal-accent transition-all whitespace-nowrap flex-shrink-0 min-h-[48px]"
             >
               <span>Book free consultation</span>
               <ArrowRight className="h-4 w-4" />
@@ -254,7 +254,7 @@ export function ServicesView() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="mt-10 rounded-lg border border-amber-400/30 bg-gradient-to-r from-navy-850 via-navy-800 to-navy-850 p-6 sm:p-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl"
+            className="mt-10 rounded-lg border border-devops-border bg-navy-850 p-6 sm:p-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6"
           >
             <div>
               <span className="font-mono text-xs uppercase tracking-wider text-amber-400 font-semibold">
@@ -271,7 +271,7 @@ export function ServicesView() {
               href="https://calendly.com/shujaahmed198/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-accent px-6 py-3.5 text-xs sm:text-sm font-bold text-navy-950 hover:bg-teal-glow transition-all whitespace-nowrap flex-shrink-0 min-h-[48px]"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-teal-accent/80 bg-transparent hover:bg-teal-accent/10 px-6 py-3.5 text-xs sm:text-sm font-mono font-bold text-teal-accent transition-all whitespace-nowrap flex-shrink-0 min-h-[48px]"
             >
               <span>Book free consultation</span>
               <ArrowRight className="h-4 w-4" />
@@ -280,7 +280,7 @@ export function ServicesView() {
         </section>
 
         {/* Working Together FAQ Strip */}
-        <section className="rounded-lg border border-devops-border bg-navy-850/60 p-6 sm:p-10 backdrop-blur-md">
+        <section className="rounded-lg border border-devops-border bg-navy-850 p-6 sm:p-10">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div>
               <div className="flex items-center gap-2 text-teal-accent font-mono text-xs font-bold mb-2">
@@ -296,7 +296,7 @@ export function ServicesView() {
             </div>
             <Link
               href="/faq"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-devops-border bg-navy-900 px-5 py-3 text-xs sm:text-sm font-semibold text-slate-200 hover:border-teal-accent hover:text-white transition-colors flex-shrink-0 min-h-[48px]"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-devops-border bg-navy-900 px-5 py-3 text-xs sm:text-sm font-mono font-semibold text-slate-200 hover:border-teal-accent hover:text-white transition-colors flex-shrink-0 min-h-[48px]"
             >
               <span>Read Full FAQ</span>
               <ArrowRight className="h-4 w-4 text-teal-accent" />
